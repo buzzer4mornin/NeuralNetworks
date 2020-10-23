@@ -29,3 +29,11 @@ def shuffle_letters(word, shuffle=5):
     i, j = random.randint(0, len(word) - 1), random.randint(0, len(word) - 1)
     word[i], word[j] = word[j], word[i]
     return shuffle_letters(word, shuffle - 1)
+
+
+"""
+Generate training data
+"""
+size_of_data = 10000
+train_data = [reformat_to_window(shuffle_letters(random.choice(word_list), random.randint(1, 3) * random.randint(0, 1))) \
+              for _ in range(0, size_of_data)]
