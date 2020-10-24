@@ -46,7 +46,7 @@ train_y = [recognize(w) for w in train_data]
 
 
 decode_output = lambda o: 'Not recognize' if np.sum(o) >= 2 or np.sum(o) == 0 else word_list[o.tolist().index(1)]
-nn_output = train_y[0]
+#nn_output = train_y[2]
 #print(nn_output)
 #print(decode_output(nn_output))
 
@@ -64,10 +64,12 @@ nn_encode = np.zeros(window_length * 5)
 
 
 def encode_window(word=word_list_formated[0]):
+    #print(word)
     global nn_encode
     word_binaries = [bin(ord(l))[-5:] for l in list(word)]
     word_binaries = ''.join(word_binaries)
     word_binaries = [int(b) for b in list(word_binaries)]
+    #print(word_binaries)
     return np.array(word_binaries)
 
 
@@ -75,9 +77,24 @@ def decode_window(input_binaries_list):
     word_binaries = input_binaries_list.tolist()
     word_binaries = ''.join([str(b) for b in input_binaries_list])
     word_binaries = ['011' + word_binaries[i:i + 5] for i in range(0, len(word_binaries), 5)]
-    # print(word_binaries)
+    #print(word_binaries)
     return ''.join([chr(int(x, 2)) for x in word_binaries])
 
 
 nn_encode = encode_window(word=word_list_formated[0])
 decode_window(nn_encode)
+
+
+# ============================================== Neural Network =======================================================
+nn_hidden_layer_1 = np.zeros(10)
+nn_hidden_layer_2 = np.zeros(10)
+
+print(nn_encode.size, nn_hidden_layer_1.size, nn_output.size)
+""" Why 60-10-20? 
+Because in Input, we encode each input as length of 12 -> "blink       " 
+and for each character in input, we encode it as binary of length 5, so 5*12 = 60 input neurons
+in Output we get 20 neurons and each neuron is 0/1. It is map decision of our Recognition Word list created 
+at very beginning of task - word_list. Each binary output means whether NN could recognize given input as any member 
+of word_list
+"""
+
