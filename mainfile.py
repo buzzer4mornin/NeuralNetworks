@@ -35,7 +35,6 @@ train_data = [reformat_to_window(shuffle_letters(random.choice(word_list), rando
               for _ in range(0, size_of_data)]
 
 # ========================================= Encode & Decode output ====================================================
-
 nn_output = np.zeros(len(word_list))
 
 """In order to train the model need a supervised train_data. Let's encode the output as a vector of binaries where 1 
@@ -49,4 +48,16 @@ train_y = [recognize(w) for w in train_data]
 
 decode_output = lambda o: 'Not recognize' if np.sum(o) >= 2 or np.sum(o) == 0 else word_list[o.tolist().index(1)]
 nn_output = train_y[0]
-print(decode_output(nn_output))
+#print(decode_output(nn_output))
+
+# ========================================= Encode & Decode input ====================================================
+"""
+Encode the input look at this https://stackoverflow.com/questions/7396849/convert-binary-to-ascii-and-vice-versa
+"""
+
+# Here is a little demonstration that we need 5 binaries to distinguish the 26 minus letter
+alpha = 'abcdefghijklmnopqrstuvwxyz'
+binaries = [bin(ord(letter_min))[-5:] for letter_min in list(alpha)]
+print(len(binaries), len(list(set(binaries)))) # suppress the doublon in the second list
+
+
