@@ -16,6 +16,8 @@ word_list_formated = [reformat_to_window(w) for w in word_list]
 Generating the appropriate train data : 
 - Balanced 
 - Negative closed to positive """
+
+
 def shuffle_letters(word, shuffle=5):
     """ Recursive function that exchange two letters at each iteration (shuffle)"""
     if type(word) is not list:
@@ -42,5 +44,9 @@ different words. """
 
 recognize = lambda w: np.array([1 if w == w_f else 0 for w_f in word_list_formated])
 train_y = [recognize(w) for w in train_data]
-print(sum([sum(x) for x in train_y])/len(train_data)) # proportion of correct words after shuffle
+#print(sum([sum(x) for x in train_y]) / len(train_data))  # proportion of correct words after shuffle
 
+
+decode_output = lambda o: 'Not recognize' if np.sum(o) >= 2 or np.sum(o) == 0 else word_list[o.tolist().index(1)]
+nn_output = train_y[0]
+print(decode_output(nn_output))
