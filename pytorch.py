@@ -89,32 +89,20 @@ nn_encode = encode_window(word=word_list_formated[0])
 decode_window(nn_encode)
 
 # ============================================== Neural Network =======================================================
-nn_hidden_layer_1 = np.zeros(10)
-nn_hidden_layer_2 = np.zeros(10)
 
 # print(train_data[5])   # word itself
 # print(encode_window(word=train_data[5])) # Input binaries
 # print(train_y[5])   # Output desired binaries
 
-
-# b = encode_window(word=train_data[1]).reshape(1, -1)
-# c = np.concatenate((a, b), axis=0)
-# print(c.shape)
-
+input_size = 60
+hidden_size = [10, 10]
+output_size = 20
 
 c = encode_window(word=train_data[0]).reshape(1, -1)
 for i in range(1, len(train_data)):
     a = encode_window(word=train_data[i]).reshape(1, -1)
     c = np.concatenate((c, a), axis=0)
 
-#print(c)
-
-input_size = 60
-hidden_size = [10, 10]
-output_size = 20
-
-
 tensor_x = torch.Tensor(c)
 tensor_y = torch.Tensor(np.array(train_y))
-#print(tensor_x.shape)
-#print(tensor_y.shape)
+
