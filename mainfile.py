@@ -30,8 +30,8 @@ def shuffle_letters(word, shuffle=5):
 
 
 """Generate training data"""
-size_of_data = 30000
-train_data = [reformat_to_window(shuffle_letters(random.choice(word_list), random.randint(1, 3) * random.randint(0, 1))) \
+size_of_data = 1000
+train_data = [reformat_to_window(shuffle_letters(random.choice(word_list), random.randint(1, 3) * random.randint(0, 1)* random.randint(0, 1)* random.randint(0, 1)* random.randint(0, 1)* random.randint(0, 1) * random.randint(0, 1) * random.randint(0, 1))) \
               for _ in range(0, size_of_data)]
 # ========================================= Encode & Decode output ====================================================
 nn_output = np.zeros(len(word_list))
@@ -41,7 +41,7 @@ different words. """
 
 recognize = lambda w: np.array([1 if w == w_f else 0 for w_f in word_list_formated])
 train_y = [recognize(w) for w in train_data]
-# print(sum([sum(x) for x in train_y]) / len(train_data))  # proportion of correct words after shuffle
+print(sum([sum(x) for x in train_y]) / len(train_data))  # proportion of correct words after shuffle
 
 decode_output = lambda o: 'Not recognize' if np.sum(o) >= 2 or np.sum(o) == 0 else word_list[o.tolist().index(1)]
 # nn_output = train_y[2]
@@ -83,7 +83,7 @@ nn_encode = encode_window(word=word_list_formated[0])
 decode_window(nn_encode)
 
 # ============================================== Neural Network =======================================================
-nn_hidden_layer_1 = np.zeros(20)
+nn_hidden_layer_1 = np.zeros(10)
 nn_hidden_layer_2 = np.zeros(10)
 
 # print(nn_encode.size, nn_hidden_layer_1.size, nn_output.size)
@@ -99,17 +99,28 @@ of word_list
 sigmoid = lambda x: 1 / (1 + np.exp(-x))
 sigmoid_ = lambda y: y * (1 - y)
 
-
+# correct solution:
+def softmax(x):
+    """Compute softmax values for each sets of scores in x."""
+    e_x = np.exp(x - np.max(x))
+    return e_x / e_x.sum(axis=0) # only difference
+add_row_ones=lambda x : np.array([*x,np.ones(x.shape[1])])
 class NeuralNetwork:
     def __init__(self, input_layer=nn_encode, l_hidden_layers=[nn_hidden_layer_1], output_layer=nn_output):
         self.layers = np.array([input_layer, *l_hidden_layers, output_layer])
+        'Layers: 60-10-20 '
+        #print(len(self.layers[0]), len(self.layers[1]), len(self.layers[2]))
         L = []
         for i in range(0, self.layers.size - 1):  # !!!! L for weigth corespond to L-1 for Layers
             weight = np.random.rand(self.layers[i].size + 1, self.layers[i + 1].size)
-            weight[-1] = -1 * weight[-1]  # Change the signe of the biase
+
+            weight[-1] = -1 * weight[-1]  # Change the sign of the biases
             L.append(weight)  # self.weights[L][k][l] : L : Layer  ; k neurone ; l edge
         self.weights = np.array(L)
-        
+        'Weights: (61, 10) and (11, 20)'
+        print(self.weights[0].shape,self.weights[0].shape)
+
+
 
     def input_word(self, word):
         self.layers[0] = encode_window(word)
@@ -121,23 +132,25 @@ class NeuralNetwork:
         return (self.layers[-1])
 
     def decode_output(self):
-        return (decode_output((self.layers[-1] >= 0.5)) * 1)
+        return decode_output((self.layers[-1] >= 0.5)) * 1
 
+    # Inspect this
     def feedfoward(self):
         for L in range(0, self.layers.size - 1):
             self.layers[L + 1] = sigmoid(np.dot(np.array([*self.layers[L], 1]), self.weights[L]))
+        #print(np.array([*self.layers[0], 1]))
 
-    def backpropagation(self, desiered_output, eta=0.1):
-        error_vector = self.output() - desiered_output
-        cost = np.sum(error_vector * error_vector)
-        for L in range(0, self.layers.size - 1):
-            L = self.layers.size - 2 - L  # browse the list backwards
-            delta = sigmoid_(self.layers[L + 1]) * error_vector  #
-            mat_delta = np.matmul(np.array([*self.layers[L], 1]).reshape(self.layers[L].size + 1, 1),
-                                  delta.reshape(1, delta.size))  ## Adding 1 for
-            self.weights[L] = self.weights[L] - eta * 2 * mat_delta  ## Actualize the weight
-            error_vector = np.matmul(self.weights[L][0:-1], error_vector.T)  ## Propagate the error (without biases)
-        return cost
+    # Inspect this
+    def backpropagation(self,desiered_output,eta=0.2):
+        error_vector=self.output()-desiered_output
+        cost=np.sum(error_vector*error_vector)
+        for L in range(0,self.layers.size-1):
+            L=self.layers.size-2-L # browse the list backwards
+            delta=sigmoid_(self.layers[L+1])*error_vector #
+            mat_delta=np.matmul(np.array([*self.layers[L],1]).reshape(self.layers[L].size+1,1),delta.reshape(1,delta.size)) ## Adding 1 for
+            self.weights[L]=self.weights[L]-eta*2*mat_delta ## Actualize the weight
+            error_vector=np.matmul(self.weights[L][0:-1],error_vector.T) ## Propagate the error (without biases)
+        return(cost)
 
 
 nn = NeuralNetwork(l_hidden_layers=[nn_hidden_layer_1])
@@ -151,33 +164,20 @@ nn = NeuralNetwork(l_hidden_layers=[nn_hidden_layer_1])
 # train_y_test = train_y[0:2000]
 
 
-p = 0
-for i, w in enumerate(train_data):
-    nn.input_word(w)
-    nn.feedfoward()
-    cost = nn.backpropagation(desiered_output=train_y[i], eta=0.2)
-    #print(cost)
-    '''if p >= 100:
-        print(cost)
-        p = 0
-    p = p + 1'''
+'''p = 0
+for e in range(200):
+    for i, w in enumerate(train_data):
+        nn.input_word(w)
+        nn.feedfoward()
+        cost = nn.backpropagation(desiered_output=train_y[i], eta=0.01)
 
 counts = 0
 for word in word_list:
     nn.input_word(reformat_to_window(word))
     nn.feedfoward()
+    #print(sum(softmax(nn.output())))
+    print(nn.decode_output())
     if nn.decode_output() == word:
         counts += 1
 
-print(counts)
-
-
-"""t = np.ndarray(1).reshape(1, -1)
-for i in train_y:
-    if sum(i) == 1:
-        t = np.concatenate((t, [[list(i).index(1)]]), axis=0)
-    else:
-        t = np.concatenate((t, [[20]]), axis=0)
-t = t[1:]
-#tensor_y = torch.Tensor(np.array(t))
-"""
+print("correct solutions:", counts)'''

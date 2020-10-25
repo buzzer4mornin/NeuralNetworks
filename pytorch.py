@@ -116,21 +116,21 @@ tensor_y_test = torch.Tensor(test_y)
 
 model = nn.Sequential(
     nn.Linear(input_size, hidden_layers[0]),
-    nn.ReLU(),
-    nn.Linear(hidden_layers[0], hidden_layers[1]),
-    nn.ReLU(),
-    nn.Linear(hidden_layers[1], output_size),
+    nn.Sigmoid(),
+#    nn.Linear(hidden_layers[0], hidden_layers[1]),
+#    nn.Sigmoid(),
+    nn.Linear(hidden_layers[0], output_size),
     #nn.Softmax(dim=1)
 )
 
 criterion = nn.CrossEntropyLoss()
-optimizer = optim.Adam(model.parameters(), lr=0.003)
+optimizer = optim.Adam(model.parameters(), lr=0.01)
 
 
 def softmax(x): return x.exp() / (x.exp().sum(-1)).unsqueeze(-1)
 def nl(input, target): return -input[range(target.shape[0]), target].log().mean()
 
-for e in range(4):
+for e in range(70):
     running_loss = 0
     for images, labels in zip(tensor_x, tensor_y):
 
@@ -170,7 +170,7 @@ def check_acc(tensor_x_test,tensor_y_test, model):
     with torch.no_grad():
         for images, labels in zip(tensor_x_test, tensor_y_test):
             output = model(images)
-            # output = softmax(output)
+            output = softmax(output)
             output = output.view(1, -1)
             print(output)
 
