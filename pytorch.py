@@ -1,9 +1,10 @@
 import random
 import numpy as np
+import pandas as pd
 import torch
 import torchvision
 from torchvision import transforms, datasets
-
+from torch.utils.data import Dataset
 
 """
 Generating the training data
@@ -34,7 +35,7 @@ def shuffle_letters(word, shuffle=5):
 
 
 """Generate training data"""
-size_of_data = 30000
+size_of_data = 10000
 train_data = [reformat_to_window(shuffle_letters(random.choice(word_list), random.randint(1, 3) * random.randint(0, 1))) \
               for _ in range(0, size_of_data)]
 # ========================================= Encode & Decode output ====================================================
@@ -90,6 +91,19 @@ decode_window(nn_encode)
 nn_hidden_layer_1 = np.zeros(10)
 nn_hidden_layer_2 = np.zeros(10)
 
-print(train_data[5])   # word itself
-print(encode_window(word=train_data[5])) # Input binaries
-print(train_y[5])   # Output desired binaries
+# print(train_data[5])   # word itself
+# print(encode_window(word=train_data[5])) # Input binaries
+# print(train_y[5])   # Output desired binaries
+
+
+# b = encode_window(word=train_data[1]).reshape(1, -1)
+# c = np.concatenate((a, b), axis=0)
+# print(c.shape)
+
+
+c = encode_window(word=train_data[0]).reshape(1, -1)
+for i in range(1, len(train_data)):
+    a = encode_window(word=train_data[i]).reshape(1, -1)
+    c = np.concatenate((c, a), axis=0)
+
+print(c)
