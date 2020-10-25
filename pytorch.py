@@ -43,7 +43,8 @@ different words. """
 
 recognize = lambda w: np.array([1 if w == w_f else 0 for w_f in word_list_formated])
 train_y = [recognize(w) for w in train_data]
-# print(sum([sum(x) for x in train_y]) / len(train_data))  # proportion of correct words after shuffle
+
+#print(sum([sum(x) for x in train_y]) / len(train_y))  # proportion of correct words after shuffle
 
 decode_output = lambda o: 'Not recognize' if np.sum(o) >= 2 or np.sum(o) == 0 else word_list[o.tolist().index(1)]
 # nn_output = train_y[2]
@@ -99,20 +100,18 @@ for i in range(1, len(train_data)):
     a = encode_window(word=train_data[i]).reshape(1, -1)
     c = np.concatenate((c, a), axis=0)
 
+test_x = c[2800:3000]
+test_y = np.array(train_y)[2800:3000]
+train_x = c[0:2800]
+train_y = np.array(train_y)[0:2800]
 
+tensor_x = torch.Tensor(train_x)
+tensor_y = torch.Tensor(train_y)
+#print(tensor_x.shape, tensor_y.shape)
 
-t = np.ndarray(1).reshape(1, -1)
-for i in train_y:
-    if sum(i) == 1:
-        t = np.concatenate((t, [[list(i).index(1)]]), axis=0)
-    else:
-        t = np.concatenate((t, [[20]]), axis=0)
-t = t[1:]
-
-tensor_x = torch.Tensor(c)
-tensor_y = torch.Tensor(np.array(train_y))
-#tensor_y = torch.Tensor(np.array(t))
-
+tensor_x_test = torch.Tensor(test_x)
+tensor_y_test = torch.Tensor(test_y)
+#print(tensor_x_test.shape, tensor_y_test.shape)
 
 
 model = nn.Sequential(
@@ -125,13 +124,13 @@ model = nn.Sequential(
 )
 
 criterion = nn.CrossEntropyLoss()
-optimizer = optim.Adam(model.parameters(), lr=0.001)
+optimizer = optim.Adam(model.parameters(), lr=0.003)
 
 
 def softmax(x): return x.exp() / (x.exp().sum(-1)).unsqueeze(-1)
 def nl(input, target): return -input[range(target.shape[0]), target].log().mean()
 
-for e in range(8):
+for e in range(4):
     running_loss = 0
     for images, labels in zip(tensor_x, tensor_y):
 
@@ -159,5 +158,20 @@ for e in range(8):
         # update the gradient to new gradients
         optimizer.step()
         running_loss += loss.item()
-    print("Training loss: ", (running_loss / 3000))
+    print("Training loss: ", (running_loss / 2800))
 
+
+
+
+
+
+def check_acc(tensor_x_test,tensor_y_test, model):
+    model.eval()
+    with torch.no_grad():
+        for images, labels in zip(tensor_x_test, tensor_y_test):
+            output = model(images)
+            # output = softmax(output)
+            output = output.view(1, -1)
+            print(output)
+
+check_acc(tensor_x_test, tensor_y_test, model)

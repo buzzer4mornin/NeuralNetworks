@@ -170,3 +170,14 @@ for word in word_list:
         counts += 1
 
 print(counts)
+
+
+"""t = np.ndarray(1).reshape(1, -1)
+for i in train_y:
+    if sum(i) == 1:
+        t = np.concatenate((t, [[list(i).index(1)]]), axis=0)
+    else:
+        t = np.concatenate((t, [[20]]), axis=0)
+t = t[1:]
+#tensor_y = torch.Tensor(np.array(t))
+"""
