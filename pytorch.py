@@ -19,11 +19,6 @@ window_length = max([len(w) for w in word_list]) + 1
 reformat_to_window = lambda w: w + ' ' * (window_length - len(w))
 word_list_formated = [reformat_to_window(w) for w in word_list]
 
-"""
-Generating the appropriate train data : 
-- Balanced 
-- Negative closed to positive """
-
 
 def shuffle_letters(word, shuffle=5):
     """ Recursive function that exchange two letters at each iteration (shuffle)"""
@@ -136,10 +131,10 @@ optimizer = optim.Adam(model.parameters(), lr=0.001)
 def softmax(x): return x.exp() / (x.exp().sum(-1)).unsqueeze(-1)
 def nl(input, target): return -input[range(target.shape[0]), target].log().mean()
 
-for e in range(50):
+for e in range(8):
     running_loss = 0
     for images, labels in zip(tensor_x, tensor_y):
-        optimizer.zero_grad()
+
         output = model(images)
         # =========================================================
         #print(output.shape, labels.shape)
@@ -155,24 +150,14 @@ for e in range(50):
         output = output.type(torch.FloatTensor)
         labels = labels.type(torch.LongTensor)
         loss = nl(output, labels)
-        
+
+        # set gradient to zero
+        optimizer.zero_grad()
         # backward propagation
         loss.backward()
 
         # update the gradient to new gradients
         optimizer.step()
         running_loss += loss.item()
-    else:
-        print("Training loss: ", (running_loss / 3000))
+    print("Training loss: ", (running_loss / 3000))
 
-    #else:
-    #    print("Training loss: ", (running_loss / len(labels)))'''
-
-'''loss = nn.NLLLoss()
-a = torch.tensor(([0.88, 0.12], [0.51, 0.49]), dtype = torch.float)
-target = torch.tensor([1, 0])
-output = loss(a, target)
-
-print(a.shape)
-print(target.shape)
-'''
