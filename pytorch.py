@@ -3,9 +3,10 @@ import numpy as np
 import pandas as pd
 import torch
 import torchvision
-from torch.utils.data.dataloader import DataLoader
-from torchvision import transforms, datasets
-from torch.utils.data import Dataset
+import torch.nn as nn
+import torch.nn.functional as F
+import matplotlib.pyplot as plt
+from torch import optim
 
 """
 Generating the training data
@@ -36,7 +37,7 @@ def shuffle_letters(word, shuffle=5):
 
 
 """Generate training data"""
-size_of_data = 1000
+size_of_data = 3000
 train_data = [reformat_to_window(shuffle_letters(random.choice(word_list), random.randint(1, 3) * random.randint(0, 1))) \
               for _ in range(0, size_of_data)]
 # ========================================= Encode & Decode output ====================================================
@@ -95,7 +96,7 @@ decode_window(nn_encode)
 # print(train_y[5])   # Output desired binaries
 
 input_size = 60
-hidden_size = [10, 10]
+hidden_layers = [10, 10]
 output_size = 20
 
 c = encode_window(word=train_data[0]).reshape(1, -1)
@@ -106,3 +107,50 @@ for i in range(1, len(train_data)):
 tensor_x = torch.Tensor(c)
 tensor_y = torch.Tensor(np.array(train_y))
 
+model = nn.Sequential(
+    nn.Linear(input_size, hidden_layers[0]),
+    nn.ReLU(),
+    nn.Linear(hidden_layers[0], hidden_layers[1]),
+    nn.ReLU(),
+    nn.Linear(hidden_layers[1], output_size),
+    #nn.LogSoftmax(dim=1)
+)
+
+criterion = nn.NLLLoss()
+optimizer = optim.SGD(model.parameters(), lr=0.003)
+
+
+
+
+for e in range(5):
+    running_loss = 0
+    for images, labels in zip(tensor_x, tensor_y):
+
+        # setting gradient to zeros
+        optimizer.zero_grad()
+        output = model(images)
+        #output = output.view(1, -1)
+        #labels = labels.view(1, -1)
+        #probs = nn.LogSoftmax(dim=0)
+        #softmax_output = probs(output)
+        print(labels)
+        #loss = criterion(output, labels)
+        '''
+        # backward propagation
+        loss.backward()
+
+        # update the gradient to new gradients
+        optimizer.step()
+        running_loss += loss.item()'''
+
+    #else:
+    #    print("Training loss: ", (running_loss / len(labels)))'''
+
+'''loss = nn.NLLLoss()
+a = torch.tensor(([0.88, 0.12], [0.51, 0.49]), dtype = torch.float)
+target = torch.tensor([1, 0])
+output = loss(a, target)
+
+print(a.shape)
+print(target.shape)
+'''
