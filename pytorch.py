@@ -104,8 +104,21 @@ for i in range(1, len(train_data)):
     a = encode_window(word=train_data[i]).reshape(1, -1)
     c = np.concatenate((c, a), axis=0)
 
+
+
+t = np.ndarray(1).reshape(1, -1)
+for i in train_y:
+    if sum(i) == 1:
+        t = np.concatenate((t, [[list(i).index(1)]]), axis=0)
+    else:
+        t = np.concatenate((t, [[20]]), axis=0)
+t = t[1:]
+
 tensor_x = torch.Tensor(c)
 tensor_y = torch.Tensor(np.array(train_y))
+#tensor_y = torch.Tensor(np.array(t))
+
+
 
 model = nn.Sequential(
     nn.Linear(input_size, hidden_layers[0]),
@@ -113,35 +126,44 @@ model = nn.Sequential(
     nn.Linear(hidden_layers[0], hidden_layers[1]),
     nn.ReLU(),
     nn.Linear(hidden_layers[1], output_size),
-    #nn.LogSoftmax(dim=1)
+    #nn.Softmax(dim=1)
 )
 
-criterion = nn.NLLLoss()
-optimizer = optim.SGD(model.parameters(), lr=0.003)
+criterion = nn.CrossEntropyLoss()
+optimizer = optim.Adam(model.parameters(), lr=0.001)
 
 
+def softmax(x): return x.exp() / (x.exp().sum(-1)).unsqueeze(-1)
+def nl(input, target): return -input[range(target.shape[0]), target].log().mean()
 
-
-for e in range(5):
+for e in range(50):
     running_loss = 0
     for images, labels in zip(tensor_x, tensor_y):
-
-        # setting gradient to zeros
         optimizer.zero_grad()
         output = model(images)
+        # =========================================================
+        #print(output.shape, labels.shape)
         #output = output.view(1, -1)
         #labels = labels.view(1, -1)
         #probs = nn.LogSoftmax(dim=0)
         #softmax_output = probs(output)
-        print(labels)
         #loss = criterion(output, labels)
-        '''
+        # =========================================================
+        output = softmax(output)
+        output = output.view(1, -1)
+        labels = labels.view(1, -1)
+        output = output.type(torch.FloatTensor)
+        labels = labels.type(torch.LongTensor)
+        loss = nl(output, labels)
+        
         # backward propagation
         loss.backward()
 
         # update the gradient to new gradients
         optimizer.step()
-        running_loss += loss.item()'''
+        running_loss += loss.item()
+    else:
+        print("Training loss: ", (running_loss / 3000))
 
     #else:
     #    print("Training loss: ", (running_loss / len(labels)))'''
