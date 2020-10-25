@@ -46,9 +46,9 @@ train_y = [recognize(w) for w in train_data]
 
 
 decode_output = lambda o: 'Not recognize' if np.sum(o) >= 2 or np.sum(o) == 0 else word_list[o.tolist().index(1)]
-#nn_output = train_y[2]
-#print(nn_output)
-#print(decode_output(nn_output))
+# nn_output = train_y[2]
+# print(nn_output)
+# print(decode_output(nn_output))
 
 # ========================================= Encode & Decode input ====================================================
 """
@@ -64,12 +64,12 @@ nn_encode = np.zeros(window_length * 5)
 
 
 def encode_window(word=word_list_formated[0]):
-    #print(word)
+    # print(word)
     global nn_encode
     word_binaries = [bin(ord(l))[-5:] for l in list(word)]
     word_binaries = ''.join(word_binaries)
     word_binaries = [int(b) for b in list(word_binaries)]
-    #print(word_binaries)
+    # print(word_binaries)
     return np.array(word_binaries)
 
 
@@ -77,19 +77,18 @@ def decode_window(input_binaries_list):
     word_binaries = input_binaries_list.tolist()
     word_binaries = ''.join([str(b) for b in input_binaries_list])
     word_binaries = ['011' + word_binaries[i:i + 5] for i in range(0, len(word_binaries), 5)]
-    #print(word_binaries)
+    # print(word_binaries)
     return ''.join([chr(int(x, 2)) for x in word_binaries])
 
 
 nn_encode = encode_window(word=word_list_formated[0])
 decode_window(nn_encode)
 
-
 # ============================================== Neural Network =======================================================
 nn_hidden_layer_1 = np.zeros(10)
 nn_hidden_layer_2 = np.zeros(10)
 
-print(nn_encode.size, nn_hidden_layer_1.size, nn_output.size)
+# print(nn_encode.size, nn_hidden_layer_1.size, nn_output.size)
 """ Why 60-10-20? 
 Because in Input, we encode each input as length of 12 -> "blink       " 
 and for each character in input, we encode it as binary of length 5, so 5*12 = 60 input neurons
@@ -98,3 +97,47 @@ at very beginning of task - word_list. Each binary output means whether NN could
 of word_list
 """
 
+# Link the layer by neurons:
+sigmoid = lambda x: 1 / (1 + np.exp(-x))
+sigmoid_ = lambda y: y * (1 - y)
+
+
+class NeuralNetwork:
+    def __init__(self, input_layer=nn_encode, l_hidden_layers=[nn_hidden_layer_1], output_layer=nn_output):
+        self.layers = np.array([input_layer, *l_hidden_layers, output_layer])
+        L = []
+        for i in range(0, self.layers.size - 1):  # !!!! L for weigth corespond to L-1 for Layers
+            L.append(np.random.rand(self.layers[i].size,
+                                    self.layers[i + 1].size))  # self.weights[L][k][l] : L : Layer  ; k neurone ; l edge
+        self.weights = np.array(L)
+
+    def input_word(self, word):
+        self.layers[0] = encode_window(word)
+
+    def input_decode(self):
+        return decode_window(self.layers[0])
+
+    def output(self):
+        return self.layers[-1]
+
+    def decode_output(self):
+        return decode_output((self.layers[-1] >= 0.5)) * 1
+
+    def feedfoward(self):
+        for L in range(0, self.layers.size - 1):
+            self.layers[L + 1] = sigmoid(np.dot(self.layers[L], self.weights[L]))
+
+    def backpropagation(self, desiered_output, eta=0.2):
+        error_vector = self.output() - desiered_output
+        cost = np.sum(error_vector * error_vector)
+        for L in range(0, self.layers.size - 1):
+            L = self.layers.size - 2 - L
+            delta = sigmoid_(self.layers[L + 1]) * error_vector  ## Good
+            mat_delta = np.matmul(self.layers[L].reshape(self.layers[L].size, 1), delta.reshape(1, delta.size))  ## Good
+            self.weights[L] = self.weights[L] - eta * 2 * mat_delta  ## Actualize the weight
+            error_vector = np.dot(self.weights[L], error_vector)  ## Propagate the error
+        return cost
+
+
+nn = NeuralNetwork(l_hidden_layers=[nn_hidden_layer_1])
+print(nn.weights[0][0][0])
