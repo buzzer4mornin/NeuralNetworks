@@ -3,6 +3,7 @@ import numpy as np
 import pandas as pd
 import torch
 import torchvision
+from torch.utils.data.dataloader import DataLoader
 from torchvision import transforms, datasets
 from torch.utils.data import Dataset
 
@@ -35,7 +36,7 @@ def shuffle_letters(word, shuffle=5):
 
 
 """Generate training data"""
-size_of_data = 10000
+size_of_data = 1000
 train_data = [reformat_to_window(shuffle_letters(random.choice(word_list), random.randint(1, 3) * random.randint(0, 1))) \
               for _ in range(0, size_of_data)]
 # ========================================= Encode & Decode output ====================================================
@@ -106,4 +107,14 @@ for i in range(1, len(train_data)):
     a = encode_window(word=train_data[i]).reshape(1, -1)
     c = np.concatenate((c, a), axis=0)
 
-print(c)
+#print(c)
+
+input_size = 60
+hidden_size = [10, 10]
+output_size = 20
+
+
+tensor_x = torch.Tensor(c)
+tensor_y = torch.Tensor(np.array(train_y))
+#print(tensor_x.shape)
+#print(tensor_y.shape)
