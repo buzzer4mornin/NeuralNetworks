@@ -140,4 +140,32 @@ class NeuralNetwork:
 
 
 nn = NeuralNetwork(l_hidden_layers=[nn_hidden_layer_1])
-print(nn.weights[0][0][0])
+#print(nn.weights[0][0][0])
+
+
+# Split Train and Test data
+#test_data = train_data[0:2000]
+#train_data = train_data[2000:10000]
+#train_y_train = train_y[2000:10000]
+#train_y_test = train_y[0:2000]
+
+
+
+p = 0
+for i, w in enumerate(train_data):
+    nn.input_word(w)
+    nn.feedfoward()
+    cost = nn.backpropagation(desiered_output=train_y[i], eta=0.2)
+    #print(cost)
+    '''if p >= 100:
+        print(cost)
+        p = 0
+    p = p + 1'''
+
+for word in word_list:
+    nn.input_word(reformat_to_window(word))
+    nn.feedfoward()
+    print(nn.decode_output(), end='  ')
+    print(word)
+    #print((nn.output() >= 0.5)*1)
+
