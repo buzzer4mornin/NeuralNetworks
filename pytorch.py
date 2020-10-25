@@ -1,5 +1,9 @@
 import random
 import numpy as np
+import torch
+import torchvision
+from torchvision import transforms, datasets
+
 
 """
 Generating the training data
@@ -83,90 +87,9 @@ nn_encode = encode_window(word=word_list_formated[0])
 decode_window(nn_encode)
 
 # ============================================== Neural Network =======================================================
-nn_hidden_layer_1 = np.zeros(20)
+nn_hidden_layer_1 = np.zeros(10)
 nn_hidden_layer_2 = np.zeros(10)
 
-# print(nn_encode.size, nn_hidden_layer_1.size, nn_output.size)
-""" Why 60-10-20? 
-Because in Input, we encode each input as length of 12 -> "blink       " 
-and for each character in input, we encode it as binary of length 5, so 5*12 = 60 input neurons
-in Output we get 20 neurons and each neuron is 0/1. It is map decision of our Recognition Word list created 
-at very beginning of task - word_list. Each binary output means whether NN could recognize given input as any member 
-of word_list
-"""
-
-# Link the layer by neurons:
-sigmoid = lambda x: 1 / (1 + np.exp(-x))
-sigmoid_ = lambda y: y * (1 - y)
-
-
-class NeuralNetwork:
-    def __init__(self, input_layer=nn_encode, l_hidden_layers=[nn_hidden_layer_1], output_layer=nn_output):
-        self.layers = np.array([input_layer, *l_hidden_layers, output_layer])
-        L = []
-        for i in range(0, self.layers.size - 1):  # !!!! L for weigth corespond to L-1 for Layers
-            weight = np.random.rand(self.layers[i].size + 1, self.layers[i + 1].size)
-            weight[-1] = -1 * weight[-1]  # Change the signe of the biase
-            L.append(weight)  # self.weights[L][k][l] : L : Layer  ; k neurone ; l edge
-        self.weights = np.array(L)
-        
-
-    def input_word(self, word):
-        self.layers[0] = encode_window(word)
-
-    def input_decode(self):
-        return (decode_window(self.layers[0]))
-
-    def output(self):
-        return (self.layers[-1])
-
-    def decode_output(self):
-        return (decode_output((self.layers[-1] >= 0.5)) * 1)
-
-    def feedfoward(self):
-        for L in range(0, self.layers.size - 1):
-            self.layers[L + 1] = sigmoid(np.dot(np.array([*self.layers[L], 1]), self.weights[L]))
-
-    def backpropagation(self, desiered_output, eta=0.1):
-        error_vector = self.output() - desiered_output
-        cost = np.sum(error_vector * error_vector)
-        for L in range(0, self.layers.size - 1):
-            L = self.layers.size - 2 - L  # browse the list backwards
-            delta = sigmoid_(self.layers[L + 1]) * error_vector  #
-            mat_delta = np.matmul(np.array([*self.layers[L], 1]).reshape(self.layers[L].size + 1, 1),
-                                  delta.reshape(1, delta.size))  ## Adding 1 for
-            self.weights[L] = self.weights[L] - eta * 2 * mat_delta  ## Actualize the weight
-            error_vector = np.matmul(self.weights[L][0:-1], error_vector.T)  ## Propagate the error (without biases)
-        return cost
-
-
-nn = NeuralNetwork(l_hidden_layers=[nn_hidden_layer_1])
-# print(nn.weights[0][0][0])
-
-
-# Split Train and Test data
-# test_data = train_data[0:2000]
-# train_data = train_data[2000:10000]
-# train_y_train = train_y[2000:10000]
-# train_y_test = train_y[0:2000]
-
-
-p = 0
-for i, w in enumerate(train_data):
-    nn.input_word(w)
-    nn.feedfoward()
-    cost = nn.backpropagation(desiered_output=train_y[i], eta=0.2)
-    #print(cost)
-    '''if p >= 100:
-        print(cost)
-        p = 0
-    p = p + 1'''
-
-counts = 0
-for word in word_list:
-    nn.input_word(reformat_to_window(word))
-    nn.feedfoward()
-    if nn.decode_output() == word:
-        counts += 1
-
-print(counts)
+print(train_data[5])   # word itself
+print(encode_window(word=train_data[5])) # Input binaries
+print(train_y[5])   # Output desired binaries
