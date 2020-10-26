@@ -30,8 +30,8 @@ def shuffle_letters(word, shuffle=5):
 
 
 """Generate training data"""
-size_of_data = 1000
-train_data = [reformat_to_window(shuffle_letters(random.choice(word_list), random.randint(1, 3) * random.randint(0, 1)* random.randint(0, 1)* random.randint(0, 1)* random.randint(0, 1)* random.randint(0, 1) * random.randint(0, 1) * random.randint(0, 1))) \
+size_of_data = 10000
+train_data = [reformat_to_window(shuffle_letters(random.choice(word_list), random.randint(1, 3) * random.randint(0, 1))) \
               for _ in range(0, size_of_data)]
 # ========================================= Encode & Decode output ====================================================
 nn_output = np.zeros(len(word_list))
@@ -108,8 +108,10 @@ add_row_ones=lambda x : np.array([*x,np.ones(x.shape[1])])
 class NeuralNetwork:
     def __init__(self, input_layer=nn_encode, l_hidden_layers=[nn_hidden_layer_1], output_layer=nn_output):
         self.layers = np.array([input_layer, *l_hidden_layers, output_layer])
+
         'Layers: 60-10-20 '
         #print(len(self.layers[0]), len(self.layers[1]), len(self.layers[2]))
+
         L = []
         for i in range(0, self.layers.size - 1):  # !!!! L for weigth corespond to L-1 for Layers
             weight = np.random.rand(self.layers[i].size + 1, self.layers[i + 1].size)
@@ -117,8 +119,9 @@ class NeuralNetwork:
             weight[-1] = -1 * weight[-1]  # Change the sign of the biases
             L.append(weight)  # self.weights[L][k][l] : L : Layer  ; k neurone ; l edge
         self.weights = np.array(L)
+
         'Weights: (61, 10) and (11, 20)'
-        print(self.weights[0].shape,self.weights[0].shape)
+        #print(self.weights[0].shape, self.weights[1].shape)
 
 
 
@@ -136,27 +139,29 @@ class NeuralNetwork:
 
     # Inspect this
     def feedfoward(self):
-        for L in range(0, self.layers.size - 1):
-            self.layers[L + 1] = sigmoid(np.dot(np.array([*self.layers[L], 1]), self.weights[L]))
-        #print(np.array([*self.layers[0], 1]))
+        """Sigmoid  -> 61 * (61, 10) = [10]
+           Softmax -> 11 * (11, 20) = [20]"""
+        self.layers[1] = sigmoid(np.dot(np.array([*self.layers[0], 1]), self.weights[0]))
+        self.layers[2] = softmax(np.dot(np.array([*self.layers[1], 1]), self.weights[1]))
+        #print(self.layers[1])
+        #print(self.layers[2])
 
     # Inspect this
-    def backpropagation(self,desiered_output,eta=0.2):
+    def backpropagation(self, desiered_output, eta):
         error_vector=self.output()-desiered_output
-        cost=np.sum(error_vector*error_vector)
+        cost = np.sum(error_vector*error_vector)
         for L in range(0,self.layers.size-1):
             L=self.layers.size-2-L # browse the list backwards
             delta=sigmoid_(self.layers[L+1])*error_vector #
             mat_delta=np.matmul(np.array([*self.layers[L],1]).reshape(self.layers[L].size+1,1),delta.reshape(1,delta.size)) ## Adding 1 for
             self.weights[L]=self.weights[L]-eta*2*mat_delta ## Actualize the weight
             error_vector=np.matmul(self.weights[L][0:-1],error_vector.T) ## Propagate the error (without biases)
-        return(cost)
+        return cost
 
 
 nn = NeuralNetwork(l_hidden_layers=[nn_hidden_layer_1])
+
 # print(nn.weights[0][0][0])
-
-
 # Split Train and Test data
 # test_data = train_data[0:2000]
 # train_data = train_data[2000:10000]
@@ -164,20 +169,40 @@ nn = NeuralNetwork(l_hidden_layers=[nn_hidden_layer_1])
 # train_y_test = train_y[0:2000]
 
 
-'''p = 0
-for e in range(200):
+# Train model with epochs
+p = 0
+for e in range(500):
+    err = 0
     for i, w in enumerate(train_data):
         nn.input_word(w)
         nn.feedfoward()
-        cost = nn.backpropagation(desiered_output=train_y[i], eta=0.01)
+        cost = nn.backpropagation(desiered_output=train_y[i], eta=0.0001)
+        err += cost #where to put cost and how to construct it?
+    print(err)
 
-counts = 0
-for word in word_list:
+# Prepare testing data
+test_size = 100
+mytest = [shuffle_letters(random.choice(word_list), random.randint(1, 3) * random.randint(0, 1)) \
+              for _ in range(0, test_size)]
+
+
+# Test accuracy on testing data
+word_list_counts = 0
+word_list_result = 0
+not_r = 0
+for word in mytest:
     nn.input_word(reformat_to_window(word))
     nn.feedfoward()
-    #print(sum(softmax(nn.output())))
-    print(nn.decode_output())
-    if nn.decode_output() == word:
-        counts += 1
+    if word in word_list:
+        word_list_counts += 1
+        if nn.decode_output() == word:
+            word_list_result += 1
+    else:
+        if nn.decode_output() == "Not recognize":
+            not_r += 1
+        else:
+            print(word, nn.decode_output())
 
-print("correct solutions:", counts)'''
+print(word_list_counts, word_list_result)
+print(not_r)
+
