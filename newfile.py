@@ -101,21 +101,26 @@ model = network.fit(nn_encode, train_y)
 with lzma.open("diacritization.model", "wb") as model_file:
     pickle.dump(model, model_file)
 with lzma.open("diacritization.model", "rb") as model_file:
-       model = pickle.load(model_file)
+    model = pickle.load(model_file)
+# =====================================================================================================================
 
-#for word in word_list:
-#    print(model.predict(encode_window(reformat_to_window(word)).reshape(1, -1)))
-
-test_size = 100000
-mytest = [shuffle_letters(random.choice(word_list), random.randint(1, 5) * random.randint(0, 1)) \
+test_size = 10000
+mytest = [shuffle_letters(random.choice(word_list), random.randint(1, 5)) \
           for _ in range(0, test_size)]
 
-
-c = 0
+y, n = 0, 0
 for word in mytest:
+    pred = decode_output(model.predict(encode_window(reformat_to_window(word)).reshape(1, -1))[0])
     if word not in word_list:
-        pred = decode_output(model.predict(encode_window(reformat_to_window(word)).reshape(1, -1))[0])
-        print(word, " ====== ", pred)
+        # print(word, " ======> ", pred)
         if pred != "Not recognize":
-            c += 1
-print(c)
+            n += 1
+
+for word in word_list:
+    pred = decode_output(model.predict(encode_window(reformat_to_window(word)).reshape(1, -1))[0])
+    # print(word, " ====== ", pred)
+    if pred == word:
+        y += 1
+
+print(f"Positive data prediction: {y}/20 ({y/20*100}%) \n"
+      f"Negative data prediction: {test_size - n}/{test_size} ({(test_size - n)/test_size*100}%)")
