@@ -108,7 +108,7 @@ add_row_ones=lambda x : np.array([*x,np.ones(x.shape[1])])
 class NeuralNetwork:
     def __init__(self, input_layer=nn_encode, l_hidden_layers=[nn_hidden_layer_1], output_layer=nn_output):
         self.layers = np.array([input_layer, *l_hidden_layers, output_layer])
-
+        print(self.layers)
         'Layers: 60-10-20 '
         #print(len(self.layers[0]), len(self.layers[1]), len(self.layers[2]))
 
@@ -152,7 +152,7 @@ class NeuralNetwork:
         cost = np.sum(error_vector*error_vector)
         for L in range(0,self.layers.size-1):
             L=self.layers.size-2-L # browse the list backwards
-            delta=sigmoid_(self.layers[L+1])*error_vector #
+            delta = sigmoid_(self.layers[L+1])*error_vector #
             mat_delta=np.matmul(np.array([*self.layers[L],1]).reshape(self.layers[L].size+1,1),delta.reshape(1,delta.size)) ## Adding 1 for
             self.weights[L]=self.weights[L]-eta*2*mat_delta ## Actualize the weight
             error_vector=np.matmul(self.weights[L][0:-1],error_vector.T) ## Propagate the error (without biases)
