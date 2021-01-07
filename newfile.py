@@ -78,7 +78,7 @@ def encode_window(word=word_list_formated[0]):
 
 
 def decode_window(input_binaries_list):
-    # word_binaries = input_binaries_list.tolist()
+    word_binaries = input_binaries_list.tolist()
     word_binaries = ''.join([str(b) for b in input_binaries_list])
     word_binaries = ['011' + word_binaries[i:i + 5] for i in range(0, len(word_binaries), 5)]
     # print(word_binaries)
@@ -92,41 +92,30 @@ nn_encode = [encode_window(word=train_data[i]) for i in range(len(train_data))]
 # =====================================================================================================================
 # ============================================ NEURAL NETWORK =========================================================
 # =====================================================================================================================
-#network = MLPClassifier(hidden_layer_sizes=(10, 10), activation='relu', solver='adam', alpha=0.0001,
-#                        batch_size=300, learning_rate='constant', learning_rate_init=0.001, max_iter=100,
-#                        shuffle=True, random_state=42, tol=1e-5, verbose=True, early_stopping=False)
+network = MLPClassifier(hidden_layer_sizes=(10, 10), activation='relu', solver='adam', alpha=0.0001,
+                        batch_size=300, learning_rate='constant', learning_rate_init=0.001, max_iter=200,
+                        shuffle=True, random_state=42, tol=1e-5, verbose=True, early_stopping=False)
 
-#model = network.fit(nn_encode, train_y)
+model = network.fit(nn_encode, train_y)
 
-# with lzma.open("diacritization.model", "wb") as model_file:
-#    pickle.dump(model, model_file)
+with lzma.open("diacritization.model", "wb") as model_file:
+    pickle.dump(model, model_file)
 with lzma.open("diacritization.model", "rb") as model_file:
        model = pickle.load(model_file)
 
 #for word in word_list:
 #    print(model.predict(encode_window(reformat_to_window(word)).reshape(1, -1)))
 
-test_size = 100
-mytest = [shuffle_letters(random.choice(word_list), random.randint(1, 3) * random.randint(0, 1)) \
+test_size = 100000
+mytest = [shuffle_letters(random.choice(word_list), random.randint(1, 5) * random.randint(0, 1)) \
           for _ in range(0, test_size)]
 
 
-
-#TODO: TEST BELOW
-word_list_counts = 0
-word_list_result = 0
-not_r = 0
+c = 0
 for word in mytest:
-
-    if word in word_list:
-        word_list_counts += 1
-        if decode_output(model.predict(encode_window(reformat_to_window(word)).reshape(1, -1))) == word:
-            word_list_result += 1
-    else:
-        if decode_output(model.predict(encode_window(reformat_to_window(word)).reshape(1, -1))) == "Not recognize":
-            not_r += 1
-        else:
-            print(word, decode_output(model.predict(encode_window(reformat_to_window(word)).reshape(1, -1))))
-
-print(word_list_counts, word_list_result)
-print(not_r)
+    if word not in word_list:
+        pred = decode_output(model.predict(encode_window(reformat_to_window(word)).reshape(1, -1))[0])
+        print(word, " ====== ", pred)
+        if pred != "Not recognize":
+            c += 1
+print(c)
