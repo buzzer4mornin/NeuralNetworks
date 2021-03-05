@@ -97,8 +97,14 @@ train_data_encoded = [encode_window(word=train_data[i]) for i in range(len(train
 #    pickle.dump(model, model_file)
 
 # Load model
-with lzma.open("saved_network.model", "rb") as model_file:
+with    lzma.open("saved_network.model", "rb") as model_file:
     model = pickle.load(model_file)
+    with open('outputs.txt', 'w', encoding='utf-8') as f:
+        i = 0
+        for line in model.loss_curve_:
+            f.write(f"Epoch: {i}, Global Error: {line} \n")
+            i += 1
+        f.write("\n")
 
 # ======================================================================================================================
 # ============================================= PREDICTIONS ============================================================
@@ -133,7 +139,8 @@ for w in word_list:
 
 with open("outputs.txt", 'a', encoding='utf-8') as f:
     f.write(
-        'Input                 Output                         Response               Error   Accuracy   Reliability')
+        'Input                 Output                         Response                   Error      Accuracy      '
+        'Reliability')
     f.write("\n")
     for i in range(len(n_p_test)):
         if n_p_test[i] in word_list:
