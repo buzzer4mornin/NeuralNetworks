@@ -90,10 +90,10 @@ network = MLPClassifier(hidden_layer_sizes=(10, 10), activation='relu', solver='
 train_data_encoded = np.zeros(window_length * 5)
 train_data_encoded = [encode_window(word=train_data[i]) for i in range(len(train_data))]
 
-#model = network.fit(train_data_encoded, train_target)
+# model = network.fit(train_data_encoded, train_target)
 
 # Save model
-#with lzma.open("saved_network.model", "wb") as model_file:
+# with lzma.open("saved_network.model", "wb") as model_file:
 #    pickle.dump(model, model_file)
 
 # Load model
