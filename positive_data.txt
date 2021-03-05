@@ -1,0 +1,8 @@
+WORD               OUTPUT
+nice        [1. 0. 0. 0. 0. 0. 0.]
+toothpaste  [0. 1. 0. 0. 0. 0. 0.]
+highfalutin [0. 0. 1. 0. 0. 0. 0.]
+childlike   [0. 0. 0. 1. 0. 0. 0.]
+authority   [0. 0. 0. 0. 1. 0. 0.]
+halting     [0. 0. 0. 0. 0. 1. 0.]
+found       [0. 0. 0. 0. 0. 0. 1.]

@@ -16,6 +16,15 @@ window_length = max([len(w) for w in word_list]) + 1
 reformat_to_window = lambda w: w + ' ' * (window_length - len(w))
 word_list_formated = [reformat_to_window(w) for w in word_list]
 
+with open('./positive_data.txt', 'w') as f:
+    f.write("WORD" + 15 * " " + "OUTPUT" + "\n")
+    for i in range(len(word_list_formated)):
+        out = np.zeros(7)
+        out[i] = 1
+        f.write(word_list_formated[i])
+        f.write(str(out))
+        f.write("\n")
+
 
 # =====================================================================================================================
 # ============================================ GENERATE TRAIN DATA =====================================================
@@ -81,21 +90,14 @@ network = MLPClassifier(hidden_layer_sizes=(10, 10), activation='relu', solver='
 train_data_encoded = np.zeros(window_length * 5)
 train_data_encoded = [encode_window(word=train_data[i]) for i in range(len(train_data))]
 
-with open('./input_representations.txt', 'w') as f:
-    for i in range(len(train_data)):
-        f.write(train_data[i])
-        f.write(",")
-        f.write(str(train_data_encoded[i]))
-        f.write("\n")
-
-# model = network.fit(train_data_encoded, train_target)
+#model = network.fit(train_data_encoded, train_target)
 
 # Save model
-# with lzma.open("network.model", "wb") as model_file:
+#with lzma.open("saved_network.model", "wb") as model_file:
 #    pickle.dump(model, model_file)
 
 # Load model
-with lzma.open("network.model", "rb") as model_file:
+with lzma.open("saved_network.model", "rb") as model_file:
     model = pickle.load(model_file)
 
 # ======================================================================================================================
@@ -104,25 +106,10 @@ with lzma.open("network.model", "rb") as model_file:
 # Output decoder for decoding output of neural network and see if given input word is positive word or not
 decode_output = lambda o: 'Not recognize' if np.sum(o) >= 2 or np.sum(o) == 0 else word_list[o.tolist().index(1)]
 
-# Create Negative Words Test Set
-test_size = 5000
-n_test = [shuffle_letters(random.choice(word_list), random.randint(1, 5)) \
-          for _ in range(0, test_size)]
-n_test = [i for i in n_test if i not in word_list]
-
 # Create Negative + Positive Words Test Set
 test_size = 5000
-n_p_test = [shuffle_letters(random.choice(word_list), random.randint(1, 5) * random.randint(0, 1)) \
+n_p_test = [shuffle_letters(random.choice(word_list), random.randint(1, 5) * random.randint(0, 10)) \
             for _ in range(0, test_size)]
-
-# Calculate Accuracy on Negative Words
-n = 0
-for w in n_test:
-    pred = decode_output(model.predict(encode_window(reformat_to_window(w)).reshape(1, -1))[0])
-    if w not in word_list:
-        # print(w, " ======> ", pred)
-        if pred != "Not recognize":
-            n += 1
 
 # Calculate Accuracy on Negative + Positive Words
 n_p = 0
@@ -144,37 +131,25 @@ for w in word_list:
     if pred == w:
         o += 1
 
-# ======================================================================================================================
-print(
-    'Input                 Output                         Response               Error   Accuracy   Reliability')
-for i in range(len(n_test)):
-    output = np.zeros(shape=(7,))
-    pred = list(model.predict_proba(encode_window(reformat_to_window(n_test[i])).reshape(1, -1))[0])
-    for j in range(len(pred)):
-        pred[j] = float("{:.2f}".format(pred[j]))
-    acc = sum(output == pred) * 100 / len(output)
-    rely = sum(abs(output - pred) < 0.3) * 100 / len(output)
-    print(
-        f"{reformat_to_window(n_test[i])}  {output}   {pred}   {mean_squared_error(output, pred)}     {acc}        {rely}")
+with open("outputs.txt", 'a', encoding='utf-8') as f:
+    f.write(
+        'Input                 Output                         Response               Error   Accuracy   Reliability')
+    f.write("\n")
+    for i in range(len(n_p_test)):
+        if n_p_test[i] in word_list:
+            one = word_list.index(n_p_test[i])
+            output = np.zeros(shape=(7,))
+            output[one] = 1
+        else:
+            output = np.zeros(shape=(7,))
+        pred = list(model.predict_proba(encode_window(reformat_to_window(n_p_test[i])).reshape(1, -1))[0])
+        for j in range(len(pred)):
+            pred[j] = float("{:.2f}".format(pred[j]))
+        acc = sum(output == pred) * 100 / len(output)
+        rely = sum(abs(output - pred) < 0.3) * 100 / len(output)
+        f.write(
+            f"{reformat_to_window(n_p_test[i])}  {output}   {pred}   {mean_squared_error(output, pred):.8f}     {acc:.2f}        {rely:.2f}")
+        f.write("\n")
 
-# ======================================================================================================================
-print(
-    'Input                 Output                         Response               Error   Accuracy   Reliability')
-for i in range(len(n_p_test)):
-    if n_p_test[i] in word_list:
-        one = word_list.index(n_p_test[i])
-        output = np.zeros(shape=(7,))
-        output[one] = 1
-    else:
-        output = np.zeros(shape=(7,))
-    pred = list(model.predict_proba(encode_window(reformat_to_window(n_p_test[i])).reshape(1, -1))[0])
-    for j in range(len(pred)):
-        pred[j] = float("{:.2f}".format(pred[j]))
-    acc = sum(output == pred)*100/len(output)
-    rely = sum(abs(output - pred) < 0.3) * 100 / len(output)
-    print(f"{reformat_to_window(n_p_test[i])}  {output}   {pred}   {mean_squared_error(output, pred)}     {acc}        {rely}")
-
-# Print results
-print(f"Original Positive data accuracy: {o}/7 ({o / 7 * 100}%) \n"
-      f"Negative data accuracy: {test_size - n}/{test_size} ({(test_size - n) / test_size * 100}%) \n"
+    f.write(f"Original Positive data accuracy: {o}/7 ({o / 7 * 100}%) \n"
       f"Negative + Positive data accuracy: {test_size - n_p}/{test_size} ({(test_size - n_p) / test_size * 100}%)")
