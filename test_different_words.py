@@ -41,8 +41,10 @@ with lzma.open("saved_network.model", "rb") as model_file:
 
 
 test_size = 5000
+
 diff_words = ["scold", "doubt", "verdant", "describe", "wretched", "lopsided", "medical", "disturbed", "welcome",
               "decision"]
+
 diff_words_test = [shuffle_letters(random.choice(diff_words), random.randint(1, 5) * random.randint(0, 10)) \
                    for _ in range(0, test_size)]
 
