@@ -97,7 +97,7 @@ train_data_encoded = [encode_window(word=train_data[i]) for i in range(len(train
 #    pickle.dump(model, model_file)
 
 # Load model
-with    lzma.open("saved_network.model", "rb") as model_file:
+with lzma.open("saved_network.model", "rb") as model_file:
     model = pickle.load(model_file)
     with open('outputs.txt', 'w', encoding='utf-8') as f:
         i = 0
@@ -117,17 +117,22 @@ test_size = 5000
 n_p_test = [shuffle_letters(random.choice(word_list), random.randint(1, 5) * random.randint(0, 10)) \
             for _ in range(0, test_size)]
 
+
 # Calculate Accuracy on Negative + Positive Words
 n_p = 0
+wrongly_classified_words = {}
 for w in n_p_test:
     pred = decode_output(model.predict(encode_window(reformat_to_window(w)).reshape(1, -1))[0])
     if w not in word_list:
-        # print(w, " ======> ", pred)
         if pred != "Not recognize":
+            wrongly_classified_words[str(w)] = pred
             n_p += 1
     else:
         if pred != w:
+            wrongly_classified_words[str(w)] = pred
             n_p += 1
+
+print(wrongly_classified_words)
 
 # Calculate Accuracy on Original 7 words Positive Words set
 o = 0
@@ -158,5 +163,12 @@ with open("outputs.txt", 'a', encoding='utf-8') as f:
             f"{reformat_to_window(n_p_test[i])}  {output}   {pred}   {mean_squared_error(output, pred):.8f}     {acc:.2f}        {rely:.2f}")
         f.write("\n")
 
-    f.write(f"Original Positive data accuracy: {o}/7 ({o / 7 * 100}%) \n"
-      f"Negative + Positive data accuracy: {test_size - n_p}/{test_size} ({(test_size - n_p) / test_size * 100}%)")
+    f.write(f"\nOriginal Positive data accuracy: {o}/7 ({o / 7 * 100}%) \n"
+      f"Negative + Positive data accuracy: {test_size - n_p}/{test_size} ({(test_size - n_p) / test_size * 100}%)\n")
+
+    f.write(f"\n{n_p} words are wrongly classified: \n")
+
+    for i, j in wrongly_classified_words.items():
+        f.write(f"-''{i}'' is wrongly classified as ''{j}''\n")
+
+
