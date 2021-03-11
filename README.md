@@ -1,2 +1,3 @@
 # NeuralNetworks
-Implementation of Neural Networks | Recognition of Words 
+Implementation of Neural Networks Projects
+
