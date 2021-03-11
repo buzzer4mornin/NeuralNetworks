@@ -1,5 +1,5 @@
 # NeuralNetworks
-Implementation of Neural Networks Projects
+## Implementation of Neural Networks Projects
 
 WordRecognition - NN which only recognizes some list of words, disregards any other words. 
 
