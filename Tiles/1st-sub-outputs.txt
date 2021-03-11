@@ -1,0 +1,258 @@
+Epoch 0  Global error  0.25746
+Epoch 1  Global error  0.25490
+Epoch 2  Global error  0.25280
+Epoch 3  Global error  0.25012
+Epoch 4  Global error  0.24742
+Epoch 5  Global error  0.24440
+Epoch 6  Global error  0.24089
+Epoch 7  Global error  0.23681
+Epoch 8  Global error  0.23214
+Epoch 9  Global error  0.22700
+Epoch 10  Global error  0.22153
+Epoch 11  Global error  0.21593
+Epoch 12  Global error  0.21040
+Epoch 13  Global error  0.20507
+Epoch 14  Global error  0.20004
+Epoch 15  Global error  0.19534
+Epoch 16  Global error  0.19097
+Epoch 17  Global error  0.18688
+Epoch 18  Global error  0.18302
+Epoch 19  Global error  0.17937
+Epoch 20  Global error  0.17594
+Epoch 21  Global error  0.17273
+Epoch 22  Global error  0.16971
+Epoch 23  Global error  0.16687
+Epoch 24  Global error  0.16420
+Epoch 25  Global error  0.16166
+Epoch 26  Global error  0.15925
+Epoch 27  Global error  0.15695
+Epoch 28  Global error  0.15476
+Epoch 29  Global error  0.15267
+Epoch 30  Global error  0.15067
+Epoch 31  Global error  0.14875
+Epoch 32  Global error  0.14692
+Epoch 33  Global error  0.14515
+Epoch 34  Global error  0.14345
+Epoch 35  Global error  0.14180
+Epoch 36  Global error  0.14020
+Epoch 37  Global error  0.13865
+Epoch 38  Global error  0.13716
+Epoch 39  Global error  0.13571
+Epoch 40  Global error  0.13430
+Epoch 41  Global error  0.13294
+Epoch 42  Global error  0.13160
+Epoch 43  Global error  0.13030
+Epoch 44  Global error  0.12904
+Epoch 45  Global error  0.12781
+Epoch 46  Global error  0.12663
+Epoch 47  Global error  0.12549
+Epoch 48  Global error  0.12441
+Epoch 49  Global error  0.12336
+Epoch 50  Global error  0.12235
+Epoch 51  Global error  0.12137
+Epoch 52  Global error  0.12042
+Epoch 53  Global error  0.11950
+Epoch 54  Global error  0.11861
+Epoch 55  Global error  0.11774
+Epoch 56  Global error  0.11689
+Epoch 57  Global error  0.11606
+Epoch 58  Global error  0.11524
+Epoch 59  Global error  0.11444
+Epoch 60  Global error  0.11364
+Epoch 61  Global error  0.11287
+Epoch 62  Global error  0.11211
+Epoch 63  Global error  0.11136
+Epoch 64  Global error  0.11062
+Epoch 65  Global error  0.10989
+Epoch 66  Global error  0.10918
+Epoch 67  Global error  0.10848
+Epoch 68  Global error  0.10779
+Epoch 69  Global error  0.10711
+Epoch 70  Global error  0.10644
+Epoch 71  Global error  0.10578
+Epoch 72  Global error  0.10513
+Epoch 73  Global error  0.10449
+Epoch 74  Global error  0.10385
+Epoch 75  Global error  0.10322
+Epoch 76  Global error  0.10259
+Epoch 77  Global error  0.10197
+Epoch 78  Global error  0.10136
+Epoch 79  Global error  0.10075
+Epoch 80  Global error  0.10015
+Epoch 81  Global error  0.09956
+Epoch 82  Global error  0.09897
+Epoch 83  Global error  0.09840
+Epoch 84  Global error  0.09784
+Epoch 85  Global error  0.09728
+Epoch 86  Global error  0.09680
+Epoch 87  Global error  0.09627
+Epoch 88  Global error  0.09573
+Epoch 89  Global error  0.09558
+Epoch 90  Global error  0.09459
+Epoch 91  Global error  0.09415
+Epoch 92  Global error  0.09358
+Epoch 93  Global error  0.09297
+Epoch 94  Global error  0.09247
+Epoch 95  Global error  0.09195
+Epoch 96  Global error  0.09146
+Epoch 97  Global error  0.09098
+Epoch 98  Global error  0.09049
+Epoch 99  Global error  0.09002
+Epoch 100  Global error  0.08953
+Epoch 101  Global error  0.08908
+Epoch 102  Global error  0.08862
+Epoch 103  Global error  0.08816
+Epoch 104  Global error  0.08769
+Epoch 105  Global error  0.08724
+Epoch 106  Global error  0.08680
+Epoch 107  Global error  0.08636
+Epoch 108  Global error  0.08593
+Epoch 109  Global error  0.08550
+Epoch 110  Global error  0.08508
+Epoch 111  Global error  0.08465
+Epoch 112  Global error  0.08423
+Epoch 113  Global error  0.08382
+Epoch 114  Global error  0.08341
+Epoch 115  Global error  0.08301
+Epoch 116  Global error  0.08262
+Epoch 117  Global error  0.08223
+Epoch 118  Global error  0.08184
+Epoch 119  Global error  0.08147
+Epoch 120  Global error  0.08109
+Epoch 121  Global error  0.08073
+Epoch 122  Global error  0.08035
+Epoch 123  Global error  0.08000
+Epoch 124  Global error  0.07963
+Epoch 125  Global error  0.07928
+Epoch 126  Global error  0.07892
+Epoch 127  Global error  0.07858
+Epoch 128  Global error  0.07821
+Epoch 129  Global error  0.07788
+Epoch 130  Global error  0.07752
+Epoch 131  Global error  0.07720
+Epoch 132  Global error  0.07684
+Epoch 133  Global error  0.07652
+Epoch 134  Global error  0.07617
+Epoch 135  Global error  0.07585
+Epoch 136  Global error  0.07550
+Epoch 137  Global error  0.07518
+Epoch 138  Global error  0.07485
+Epoch 139  Global error  0.07453
+Epoch 140  Global error  0.07420
+Epoch 141  Global error  0.07389
+Epoch 142  Global error  0.07358
+Epoch 143  Global error  0.07328
+Epoch 144  Global error  0.07299
+Epoch 145  Global error  0.07271
+Epoch 146  Global error  0.07242
+Epoch 147  Global error  0.07216
+Epoch 148  Global error  0.07188
+Epoch 149  Global error  0.07163
+Epoch 150  Global error  0.07137
+Epoch 151  Global error  0.07112
+Epoch 152  Global error  0.07083
+Epoch 153  Global error  0.07058
+Epoch 154  Global error  0.07036
+Epoch 155  Global error  0.07011
+Epoch 156  Global error  0.06982
+Epoch 157  Global error  0.06959
+Epoch 158  Global error  0.06946
+Epoch 159  Global error  0.06924
+Epoch 160  Global error  0.06889
+Epoch 161  Global error  0.06869
+Epoch 162  Global error  0.06851
+Epoch 163  Global error  0.06836
+Epoch 164  Global error  0.06811
+Epoch 165  Global error  0.06789
+Epoch 166  Global error  0.06767
+Epoch 167  Global error  0.06750
+Epoch 168  Global error  0.06732
+Epoch 169  Global error  0.06706
+Epoch 170  Global error  0.06685
+Epoch 171  Global error  0.06668
+Epoch 172  Global error  0.06646
+Epoch 173  Global error  0.06627
+Epoch 174  Global error  0.06611
+Epoch 175  Global error  0.06598
+Epoch 176  Global error  0.06573
+Epoch 177  Global error  0.06563
+Epoch 178  Global error  0.06548
+Epoch 179  Global error  0.06528
+Epoch 180  Global error  0.06512
+Epoch 181  Global error  0.06504
+Epoch 182  Global error  0.06476
+Epoch 183  Global error  0.06467
+Epoch 184  Global error  0.06451
+Epoch 185  Global error  0.06431
+Epoch 186  Global error  0.06419
+Epoch 187  Global error  0.06408
+Epoch 188  Global error  0.06387
+Epoch 189  Global error  0.06373
+Epoch 190  Global error  0.06357
+Epoch 191  Global error  0.06339
+Epoch 192  Global error  0.06324
+Epoch 193  Global error  0.06310
+Epoch 194  Global error  0.06301
+Epoch 195  Global error  0.06286
+Epoch 196  Global error  0.06272
+Epoch 197  Global error  0.06262
+Epoch 198  Global error  0.06253
+Epoch 199  Global error  0.06240
+
+Number of Unique tiles: 48
+Total Price: 49400 $$
+Net Profit: 10600 $$
+Tile 1: 49x
+Tile 2: 39x
+Tile 3: 3x
+Tile 4: 2x
+Tile 5: 2x
+Tile 6: 2x
+Tile 7: 2x
+Tile 8: 1x
+Tile 9: 1x
+Tile 10: 1x
+Tile 11: 1x
+Tile 12: 1x
+Tile 13: 1x
+Tile 14: 1x
+Tile 15: 1x
+Tile 16: 1x
+Tile 17: 1x
+Tile 18: 1x
+Tile 19: 1x
+Tile 20: 1x
+Tile 21: 1x
+Tile 22: 1x
+Tile 23: 1x
+Tile 24: 1x
+Tile 25: 1x
+Tile 26: 1x
+Tile 27: 1x
+Tile 28: 1x
+Tile 29: 1x
+Tile 30: 1x
+Tile 31: 1x
+Tile 32: 1x
+Tile 33: 1x
+Tile 34: 1x
+Tile 35: 1x
+Tile 36: 1x
+Tile 37: 1x
+Tile 38: 1x
+Tile 39: 1x
+Tile 40: 1x
+Tile 41: 1x
+Tile 42: 1x
+Tile 43: 1x
+Tile 44: 1x
+Tile 45: 1x
+Tile 46: 1x
+Tile 47: 1x
+Tile 48: 1x
+Tile 49: 1x
+Tile 50: 1x
+Tile 51: 1x
+Tile 52: 1x
+Tile 53: 1x
+Tile 54: 1x

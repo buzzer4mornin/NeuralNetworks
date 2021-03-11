@@ -1,0 +1,304 @@
+Epoch 0  Global error  0.25347  -- Allow Network To Recognize All Rotations
+Epoch 1  Global error  0.24021  -- Allow Network To Recognize All Rotations
+Epoch 2  Global error  0.21757  -- Allow Network To Recognize All Rotations
+Epoch 3  Global error  0.18680  -- Allow Network To Recognize All Rotations
+Epoch 4  Global error  0.15955  -- Allow Network To Recognize All Rotations
+Epoch 5  Global error  0.14060  -- Allow Network To Recognize All Rotations
+Epoch 6  Global error  0.12794  -- Allow Network To Recognize All Rotations
+Epoch 7  Global error  0.11931  -- Allow Network To Recognize All Rotations
+Epoch 8  Global error  0.11323  -- Allow Network To Recognize All Rotations
+Epoch 9  Global error  0.10876  -- Allow Network To Recognize All Rotations
+Epoch 10  Global error  0.10539  -- Allow Network To Recognize All Rotations
+Epoch 11  Global error  0.10279  -- Allow Network To Recognize All Rotations
+Epoch 12  Global error  0.10071  -- Allow Network To Recognize All Rotations
+Epoch 13  Global error  0.09902  -- Allow Network To Recognize All Rotations
+Epoch 14  Global error  0.09760  -- Allow Network To Recognize All Rotations
+Epoch 15  Global error  0.09638  -- Allow Network To Recognize All Rotations
+Epoch 16  Global error  0.09530  -- Allow Network To Recognize All Rotations
+Epoch 17  Global error  0.09434  -- Allow Network To Recognize All Rotations
+Epoch 18  Global error  0.09340  -- Allow Network To Recognize All Rotations
+Epoch 19  Global error  0.09240  -- Allow Network To Recognize All Rotations
+Epoch 20  Global error  0.09139  -- Allow Network To Recognize All Rotations
+Epoch 21  Global error  0.09038  -- Allow Network To Recognize All Rotations
+Epoch 22  Global error  0.08937  -- Allow Network To Recognize All Rotations
+Epoch 23  Global error  0.08834  -- Allow Network To Recognize All Rotations
+Epoch 24  Global error  0.08727  -- Allow Network To Recognize All Rotations
+Epoch 25  Global error  0.08618  -- Allow Network To Recognize All Rotations
+Epoch 26  Global error  0.08510  -- Allow Network To Recognize All Rotations
+Epoch 27  Global error  0.08403  -- Allow Network To Recognize All Rotations
+Epoch 28  Global error  0.08298  -- Allow Network To Recognize All Rotations
+Epoch 29  Global error  0.08196  -- Allow Network To Recognize All Rotations
+Epoch 30  Global error  0.08096  -- Allow Network To Recognize All Rotations
+Epoch 31  Global error  0.07997  -- Allow Network To Recognize All Rotations
+Epoch 32  Global error  0.07898  -- Allow Network To Recognize All Rotations
+Epoch 33  Global error  0.07799  -- Allow Network To Recognize All Rotations
+Epoch 34  Global error  0.07700  -- Allow Network To Recognize All Rotations
+Epoch 35  Global error  0.07603  -- Allow Network To Recognize All Rotations
+Epoch 36  Global error  0.07507  -- Allow Network To Recognize All Rotations
+Epoch 37  Global error  0.01724
+Epoch 38  Global error  0.01694
+Epoch 39  Global error  0.01668
+Epoch 40  Global error  0.01645
+Epoch 41  Global error  0.01625
+Epoch 42  Global error  0.01607
+Epoch 43  Global error  0.01592
+Epoch 44  Global error  0.01579
+Epoch 45  Global error  0.01568
+Epoch 46  Global error  0.01559
+Epoch 47  Global error  0.01550
+Epoch 48  Global error  0.01541
+Epoch 49  Global error  0.01533
+Epoch 50  Global error  0.01526
+Epoch 51  Global error  0.01520
+Epoch 52  Global error  0.01514
+Epoch 53  Global error  0.01507
+Epoch 54  Global error  0.01501
+Epoch 55  Global error  0.01495
+Epoch 56  Global error  0.01489
+Epoch 57  Global error  0.01483
+Epoch 58  Global error  0.01477
+Epoch 59  Global error  0.01472
+Epoch 60  Global error  0.01467
+Epoch 61  Global error  0.01462
+Epoch 62  Global error  0.01457
+Epoch 63  Global error  0.01452
+Epoch 64  Global error  0.01448
+Epoch 65  Global error  0.01443
+Epoch 66  Global error  0.01439
+Epoch 67  Global error  0.01435
+Epoch 68  Global error  0.01431
+Epoch 69  Global error  0.01427
+Epoch 70  Global error  0.01423
+Epoch 71  Global error  0.01419
+Epoch 72  Global error  0.01415
+Epoch 73  Global error  0.01411
+Epoch 74  Global error  0.01407
+Epoch 75  Global error  0.01404
+Epoch 76  Global error  0.01400
+Epoch 77  Global error  0.01397
+Epoch 78  Global error  0.01395
+Epoch 79  Global error  0.01391
+Epoch 80  Global error  0.01391
+Epoch 81  Global error  0.01385
+Epoch 82  Global error  0.01386
+Epoch 83  Global error  0.01381
+Epoch 84  Global error  0.01378
+Epoch 85  Global error  0.01376
+Epoch 86  Global error  0.01373
+Epoch 87  Global error  0.01368
+Epoch 88  Global error  0.01365
+Epoch 89  Global error  0.01362
+Epoch 90  Global error  0.01359
+Epoch 91  Global error  0.01356
+Epoch 92  Global error  0.01353
+Epoch 93  Global error  0.01351
+Epoch 94  Global error  0.01349
+Epoch 95  Global error  0.01346
+Epoch 96  Global error  0.01343
+Epoch 97  Global error  0.01340
+Epoch 98  Global error  0.01337
+Epoch 99  Global error  0.01335
+Epoch 100  Global error  0.01332
+Epoch 101  Global error  0.01331
+Epoch 102  Global error  0.01329
+Epoch 103  Global error  0.01328
+Epoch 104  Global error  0.01327
+Epoch 105  Global error  0.01326
+Epoch 106  Global error  0.01321
+Epoch 107  Global error  0.01320
+Epoch 108  Global error  0.01316
+Epoch 109  Global error  0.01313
+Epoch 110  Global error  0.01311
+Epoch 111  Global error  0.01309
+Epoch 112  Global error  0.01306
+Epoch 113  Global error  0.01304
+Epoch 114  Global error  0.01303
+Epoch 115  Global error  0.01301
+Epoch 116  Global error  0.01299
+Epoch 117  Global error  0.01297
+Epoch 118  Global error  0.01296
+Epoch 119  Global error  0.01296
+Epoch 120  Global error  0.01293
+Epoch 121  Global error  0.01290
+Epoch 122  Global error  0.01288
+Epoch 123  Global error  0.01284
+Epoch 124  Global error  0.01282
+Epoch 125  Global error  0.01282
+Epoch 126  Global error  0.01281
+Epoch 127  Global error  0.01277
+Epoch 128  Global error  0.01274
+Epoch 129  Global error  0.01272
+Epoch 130  Global error  0.01270
+Epoch 131  Global error  0.01268
+Epoch 132  Global error  0.01266
+Epoch 133  Global error  0.01264
+Epoch 134  Global error  0.01263
+Epoch 135  Global error  0.01262
+Epoch 136  Global error  0.01261
+Epoch 137  Global error  0.01260
+Epoch 138  Global error  0.01256
+Epoch 139  Global error  0.01256
+Epoch 140  Global error  0.01252
+Epoch 141  Global error  0.01251
+Epoch 142  Global error  0.01249
+Epoch 143  Global error  0.01247
+Epoch 144  Global error  0.01245
+Epoch 145  Global error  0.01244
+Epoch 146  Global error  0.01242
+Epoch 147  Global error  0.01241
+Epoch 148  Global error  0.01239
+Epoch 149  Global error  0.01240
+Epoch 150  Global error  0.01237
+Epoch 151  Global error  0.01236
+Epoch 152  Global error  0.01235
+Epoch 153  Global error  0.01234
+Epoch 154  Global error  0.01231
+Epoch 155  Global error  0.01229
+Epoch 156  Global error  0.01228
+Epoch 157  Global error  0.01228
+Epoch 158  Global error  0.01228
+Epoch 159  Global error  0.01225
+Epoch 160  Global error  0.01224
+Epoch 161  Global error  0.01223
+Epoch 162  Global error  0.01221
+Epoch 163  Global error  0.01219
+Epoch 164  Global error  0.01218
+Epoch 165  Global error  0.01216
+Epoch 166  Global error  0.01214
+Epoch 167  Global error  0.01213
+Epoch 168  Global error  0.01212
+Epoch 169  Global error  0.01212
+Epoch 170  Global error  0.01210
+Epoch 171  Global error  0.01211
+Epoch 172  Global error  0.01210
+Epoch 173  Global error  0.01212
+Epoch 174  Global error  0.01211
+Epoch 175  Global error  0.01210
+Epoch 176  Global error  0.01208
+Epoch 177  Global error  0.01203
+Epoch 178  Global error  0.01201
+Epoch 179  Global error  0.01200
+Epoch 180  Global error  0.01198
+Epoch 181  Global error  0.01197
+Epoch 182  Global error  0.01195
+Epoch 183  Global error  0.01194
+Epoch 184  Global error  0.01193
+Epoch 185  Global error  0.01192
+Epoch 186  Global error  0.01190
+Epoch 187  Global error  0.01190
+Epoch 188  Global error  0.01189
+Epoch 189  Global error  0.01188
+Epoch 190  Global error  0.01187
+Epoch 191  Global error  0.01186
+Epoch 192  Global error  0.01184
+Epoch 193  Global error  0.01184
+Epoch 194  Global error  0.01182
+Epoch 195  Global error  0.01182
+Epoch 196  Global error  0.01179
+Epoch 197  Global error  0.01178
+Epoch 198  Global error  0.01178
+Epoch 199  Global error  0.01178
+Epoch 200  Global error  0.01177
+Epoch 201  Global error  0.01177
+Epoch 202  Global error  0.01175
+Epoch 203  Global error  0.01175
+Epoch 204  Global error  0.01175
+Epoch 205  Global error  0.01173
+Epoch 206  Global error  0.01171
+Epoch 207  Global error  0.01170
+Epoch 208  Global error  0.01170
+Epoch 209  Global error  0.01168
+Epoch 210  Global error  0.01168
+Epoch 211  Global error  0.01167
+Epoch 212  Global error  0.01166
+Epoch 213  Global error  0.01164
+Epoch 214  Global error  0.01163
+Epoch 215  Global error  0.01161
+Epoch 216  Global error  0.01160
+Epoch 217  Global error  0.01159
+Epoch 218  Global error  0.01159
+Epoch 219  Global error  0.01158
+Epoch 220  Global error  0.01158
+Epoch 221  Global error  0.01156
+Epoch 222  Global error  0.01157
+Epoch 223  Global error  0.01157
+Epoch 224  Global error  0.01154
+Epoch 225  Global error  0.01153
+Epoch 226  Global error  0.01151
+Epoch 227  Global error  0.01150
+Epoch 228  Global error  0.01151
+Epoch 229  Global error  0.01150
+Epoch 230  Global error  0.01151
+Epoch 231  Global error  0.01150
+Epoch 232  Global error  0.01148
+Epoch 233  Global error  0.01146
+Epoch 234  Global error  0.01145
+Epoch 235  Global error  0.01143
+Epoch 236  Global error  0.01142
+Epoch 237  Global error  0.01141
+Epoch 238  Global error  0.01139
+Epoch 239  Global error  0.01139
+Epoch 240  Global error  0.01138
+Epoch 241  Global error  0.01137
+Epoch 242  Global error  0.01137
+Epoch 243  Global error  0.01138
+Epoch 244  Global error  0.01135
+Epoch 245  Global error  0.01134
+Epoch 246  Global error  0.01134
+Epoch 247  Global error  0.01133
+Epoch 248  Global error  0.01135
+Epoch 249  Global error  0.01135
+
+17 tiles are replaced with prefabricated ones which increases our profit by 17*1000=17000$$
+Number of Unique tiles: 38
+Total Price: 30400 $$
+Net Profit: 29600 $$
+
+Tile line-middle (prefabricated):   3x
+Tile half-up     (prefabricated):   5x
+Tile half-left   (prefabricated):   4x
+Tile half-down   (prefabricated):   2x
+Tile half-right  (prefabricated):   3x
+
+Tile 1: 40x
+Tile 2: 36x
+Tile 3: 3x
+Tile 4: 3x
+Tile 5: 3x
+Tile 6: 2x
+Tile 7: 2x
+Tile 8: 2x
+Tile 9: 2x
+Tile 10: 2x
+Tile 11: 1x
+Tile 12: 1x
+Tile 13: 1x
+Tile 14: 1x
+Tile 15: 1x
+Tile 16: 1x
+Tile 17: 1x
+Tile 18: 1x
+Tile 19: 1x
+Tile 20: 1x
+Tile 21: 1x
+Tile 22: 1x
+Tile 23: 1x
+Tile 24: 1x
+Tile 25: 1x
+Tile 26: 1x
+Tile 27: 1x
+Tile 28: 1x
+Tile 29: 1x
+Tile 30: 1x
+Tile 31: 1x
+Tile 32: 1x
+Tile 33: 1x
+Tile 34: 1x
+Tile 35: 1x
+Tile 36: 1x
+Tile 37: 1x
+Tile 38: 1x
+
+
+
+

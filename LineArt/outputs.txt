@@ -1,0 +1,451 @@
+Epoch: 0, Global Error: 4.486024505967803 
+Epoch: 1, Global Error: 4.259521475932455 
+Epoch: 2, Global Error: 4.061893716947346 
+Epoch: 3, Global Error: 3.879892656056158 
+Epoch: 4, Global Error: 3.7111286897367415 
+Epoch: 5, Global Error: 3.5552355193510996 
+Epoch: 6, Global Error: 3.411753728463138 
+Epoch: 7, Global Error: 3.2838810288151037 
+Epoch: 8, Global Error: 3.170502071856706 
+Epoch: 9, Global Error: 3.069441730212949 
+Epoch: 10, Global Error: 2.9785699579350453 
+Epoch: 11, Global Error: 2.8982218395593056 
+Epoch: 12, Global Error: 2.8289628575734502 
+Epoch: 13, Global Error: 2.7689859000438304 
+Epoch: 14, Global Error: 2.718832522552602 
+Epoch: 15, Global Error: 2.677961977928128 
+Epoch: 16, Global Error: 2.644513102416053 
+Epoch: 17, Global Error: 2.616677481123206 
+Epoch: 18, Global Error: 2.59349178182472 
+Epoch: 19, Global Error: 2.572912182164049 
+Epoch: 20, Global Error: 2.5559219854216546 
+Epoch: 21, Global Error: 2.5410875785457305 
+Epoch: 22, Global Error: 2.5276288148322408 
+Epoch: 23, Global Error: 2.5145097683965174 
+Epoch: 24, Global Error: 2.5032937705078244 
+Epoch: 25, Global Error: 2.492613031800583 
+Epoch: 26, Global Error: 2.4809216554598943 
+Epoch: 27, Global Error: 2.470446126246694 
+Epoch: 28, Global Error: 2.4597552440542794 
+Epoch: 29, Global Error: 2.450348198867853 
+Epoch: 30, Global Error: 2.440360641782631 
+Epoch: 31, Global Error: 2.4307106373804803 
+Epoch: 32, Global Error: 2.422943843461722 
+Epoch: 33, Global Error: 2.4134556955814337 
+Epoch: 34, Global Error: 2.4040716354779335 
+Epoch: 35, Global Error: 2.3957553550785518 
+Epoch: 36, Global Error: 2.387110104371241 
+Epoch: 37, Global Error: 2.380307924941283 
+Epoch: 38, Global Error: 2.3718227944127843 
+Epoch: 39, Global Error: 2.363690165009135 
+Epoch: 40, Global Error: 2.356468744036424 
+Epoch: 41, Global Error: 2.348703070892633 
+Epoch: 42, Global Error: 2.341748495868407 
+Epoch: 43, Global Error: 2.3350293209039803 
+Epoch: 44, Global Error: 2.3278743758639244 
+Epoch: 45, Global Error: 2.321211148397652 
+Epoch: 46, Global Error: 2.314509073686123 
+Epoch: 47, Global Error: 2.308313337569002 
+Epoch: 48, Global Error: 2.3017075453454106 
+Epoch: 49, Global Error: 2.295448125553801 
+Epoch: 50, Global Error: 2.2888430791078194 
+Epoch: 51, Global Error: 2.2828119396276567 
+Epoch: 52, Global Error: 2.277612388990491 
+Epoch: 53, Global Error: 2.2720657716252965 
+Epoch: 54, Global Error: 2.265610116025348 
+Epoch: 55, Global Error: 2.2599919530619452 
+Epoch: 56, Global Error: 2.2543236742097696 
+Epoch: 57, Global Error: 2.2489269247116788 
+Epoch: 58, Global Error: 2.24425149310174 
+Epoch: 59, Global Error: 2.2394605050065723 
+Epoch: 60, Global Error: 2.2343554731319974 
+Epoch: 61, Global Error: 2.2292307219159078 
+Epoch: 62, Global Error: 2.224190906260379 
+Epoch: 63, Global Error: 2.220112100670566 
+Epoch: 64, Global Error: 2.2157472654073147 
+Epoch: 65, Global Error: 2.2111437663271336 
+Epoch: 66, Global Error: 2.206295529903345 
+Epoch: 67, Global Error: 2.2026045290135388 
+Epoch: 68, Global Error: 2.1979536656407546 
+Epoch: 69, Global Error: 2.1938654094770564 
+Epoch: 70, Global Error: 2.190178917183672 
+Epoch: 71, Global Error: 2.1861565515954022 
+Epoch: 72, Global Error: 2.1826901609961262 
+Epoch: 73, Global Error: 2.1780615677905395 
+Epoch: 74, Global Error: 2.1750295588918758 
+Epoch: 75, Global Error: 2.17149842970779 
+Epoch: 76, Global Error: 2.1679637127292803 
+Epoch: 77, Global Error: 2.1638826941918103 
+Epoch: 78, Global Error: 2.160494847977133 
+Epoch: 79, Global Error: 2.15706685978256 
+Epoch: 80, Global Error: 2.153641699438067 
+Epoch: 81, Global Error: 2.1508846819879577 
+Epoch: 82, Global Error: 2.1472268022749814 
+Epoch: 83, Global Error: 2.144301565076251 
+Epoch: 84, Global Error: 2.1407729955011106 
+Epoch: 85, Global Error: 2.137546241898468 
+Epoch: 86, Global Error: 2.134797657467517 
+Epoch: 87, Global Error: 2.131745939218962 
+Epoch: 88, Global Error: 2.1288289103781852 
+Epoch: 89, Global Error: 2.1257657672666888 
+Epoch: 90, Global Error: 2.123113864874377 
+Epoch: 91, Global Error: 2.1204682075200987 
+Epoch: 92, Global Error: 2.1174145325389584 
+Epoch: 93, Global Error: 2.1148240420203313 
+Epoch: 94, Global Error: 2.1120227952425044 
+Epoch: 95, Global Error: 2.1095322294323435 
+Epoch: 96, Global Error: 2.107231165613764 
+Epoch: 97, Global Error: 2.104405431610766 
+Epoch: 98, Global Error: 2.1027297189448015 
+Epoch: 99, Global Error: 2.1005224017644455 
+Epoch: 100, Global Error: 2.098383297347605 
+Epoch: 101, Global Error: 2.0961038755341757 
+Epoch: 102, Global Error: 2.0936593748510393 
+Epoch: 103, Global Error: 2.091554275602367 
+Epoch: 104, Global Error: 2.088595810372519 
+Epoch: 105, Global Error: 2.0870964834765022 
+Epoch: 106, Global Error: 2.0844342150717945 
+Epoch: 107, Global Error: 2.0830534453776446 
+Epoch: 108, Global Error: 2.0813621645072446 
+Epoch: 109, Global Error: 2.08032094997192 
+Epoch: 110, Global Error: 2.0784740549233747 
+Epoch: 111, Global Error: 2.075606949177543 
+Epoch: 112, Global Error: 2.07348119852318 
+Epoch: 113, Global Error: 2.0709346500867176 
+Epoch: 114, Global Error: 2.069379281445341 
+Epoch: 115, Global Error: 2.0674729868794737 
+Epoch: 116, Global Error: 2.0654839007675685 
+Epoch: 117, Global Error: 2.0639101100141684 
+Epoch: 118, Global Error: 2.062151195178871 
+Epoch: 119, Global Error: 2.06086677563451 
+Epoch: 120, Global Error: 2.059380176774273 
+Epoch: 121, Global Error: 2.0576184073022845 
+Epoch: 122, Global Error: 2.0560110148256934 
+Epoch: 123, Global Error: 2.054688859328122 
+Epoch: 124, Global Error: 2.052141713714218 
+Epoch: 125, Global Error: 2.0509029181736196 
+Epoch: 126, Global Error: 2.049615445337503 
+Epoch: 127, Global Error: 2.0475866712832214 
+Epoch: 128, Global Error: 2.0468126520388292 
+Epoch: 129, Global Error: 2.0447497234644954 
+Epoch: 130, Global Error: 2.0431529876315224 
+Epoch: 131, Global Error: 2.0424927873761938 
+Epoch: 132, Global Error: 2.0409242273880985 
+Epoch: 133, Global Error: 2.0390227454999335 
+Epoch: 134, Global Error: 2.0382223080730792 
+Epoch: 135, Global Error: 2.036301215634687 
+Epoch: 136, Global Error: 2.0349862539341266 
+Epoch: 137, Global Error: 2.0340222890031714 
+Epoch: 138, Global Error: 2.032657480332933 
+Epoch: 139, Global Error: 2.0325623569914453 
+Epoch: 140, Global Error: 2.0300224751211284 
+Epoch: 141, Global Error: 2.029369355702591 
+Epoch: 142, Global Error: 2.028313973431085 
+Epoch: 143, Global Error: 2.027052492734466 
+Epoch: 144, Global Error: 2.025139512184109 
+Epoch: 145, Global Error: 2.0242425849421295 
+Epoch: 146, Global Error: 2.0238320017722686 
+Epoch: 147, Global Error: 2.022595673896446 
+Epoch: 148, Global Error: 2.020808878493098 
+Epoch: 149, Global Error: 2.019737129303885 
+Epoch: 150, Global Error: 2.0190103305882525 
+Epoch: 151, Global Error: 2.0183016508632368 
+Epoch: 152, Global Error: 2.0170373782458566 
+Epoch: 153, Global Error: 2.015738500508252 
+Epoch: 154, Global Error: 2.015106936548254 
+Epoch: 155, Global Error: 2.0140781773438503 
+Epoch: 156, Global Error: 2.0134646646568473 
+Epoch: 157, Global Error: 2.012032606441676 
+Epoch: 158, Global Error: 2.0108091494988978 
+Epoch: 159, Global Error: 2.011141007847256 
+Epoch: 160, Global Error: 2.010966714945879 
+Epoch: 161, Global Error: 2.008687495433987 
+Epoch: 162, Global Error: 2.0072192398355133 
+Epoch: 163, Global Error: 2.007304296536537 
+Epoch: 164, Global Error: 2.0058053667097044 
+Epoch: 165, Global Error: 2.004467756102313 
+Epoch: 166, Global Error: 2.004037794908281 
+Epoch: 167, Global Error: 2.003652869815063 
+Epoch: 168, Global Error: 2.0024118063708434 
+Epoch: 169, Global Error: 2.001608093403437 
+Epoch: 170, Global Error: 2.000865518451761 
+Epoch: 171, Global Error: 2.0010662106060466 
+Epoch: 172, Global Error: 2.000153853129982 
+Epoch: 173, Global Error: 1.9995901692496667 
+Epoch: 174, Global Error: 1.99826423738358 
+Epoch: 175, Global Error: 1.9972033708178547 
+Epoch: 176, Global Error: 1.9958879418965698 
+Epoch: 177, Global Error: 1.9964698669727783 
+Epoch: 178, Global Error: 1.995385701037698 
+Epoch: 179, Global Error: 1.994612853849372 
+Epoch: 180, Global Error: 1.9939027625916699 
+Epoch: 181, Global Error: 1.9927104096733397 
+Epoch: 182, Global Error: 1.9923312184808146 
+Epoch: 183, Global Error: 1.992438844133668 
+Epoch: 184, Global Error: 1.9923982110897038 
+Epoch: 185, Global Error: 1.991252620692844 
+Epoch: 186, Global Error: 1.9896200978719982 
+Epoch: 187, Global Error: 1.9898434775196594 
+Epoch: 188, Global Error: 1.989117919893071 
+Epoch: 189, Global Error: 1.9892046083985546 
+Epoch: 190, Global Error: 1.9882276947823188 
+Epoch: 191, Global Error: 1.987497425313779 
+Epoch: 192, Global Error: 1.9870558015617956 
+Epoch: 193, Global Error: 1.98639605431022 
+Epoch: 194, Global Error: 1.9865208530838216 
+Epoch: 195, Global Error: 1.9857030694815105 
+Epoch: 196, Global Error: 1.984585065243474 
+Epoch: 197, Global Error: 1.9849856526868652 
+Epoch: 198, Global Error: 1.9842187067791108 
+Epoch: 199, Global Error: 1.9839862370273105 
+Epoch: 200, Global Error: 1.9827329960380884 
+Epoch: 201, Global Error: 1.9815756033897434 
+Epoch: 202, Global Error: 1.980891273101456 
+Epoch: 203, Global Error: 1.9802714379134383 
+Epoch: 204, Global Error: 1.9802908184808197 
+Epoch: 205, Global Error: 1.9800974565518463 
+Epoch: 206, Global Error: 1.979450437379178 
+Epoch: 207, Global Error: 1.9793575027706176 
+Epoch: 208, Global Error: 1.9789869073819848 
+Epoch: 209, Global Error: 1.9781287245093566 
+Epoch: 210, Global Error: 1.9768972517760848 
+Epoch: 211, Global Error: 1.9766855419932416 
+Epoch: 212, Global Error: 1.9764515336831268 
+Epoch: 213, Global Error: 1.975431832846707 
+Epoch: 214, Global Error: 1.9753558262675914 
+Epoch: 215, Global Error: 1.974932008826408 
+Epoch: 216, Global Error: 1.974900074406087 
+Epoch: 217, Global Error: 1.974301906665986 
+Epoch: 218, Global Error: 1.9742097834555608 
+Epoch: 219, Global Error: 1.9737380505880158 
+Epoch: 220, Global Error: 1.974357942051897 
+Epoch: 221, Global Error: 1.9743001551828778 
+Epoch: 222, Global Error: 1.9736587324544197 
+Epoch: 223, Global Error: 1.9729214875017222 
+Epoch: 224, Global Error: 1.9717961099326409 
+Epoch: 225, Global Error: 1.9714342613698221 
+Epoch: 226, Global Error: 1.9716292263061848 
+Epoch: 227, Global Error: 1.9705156929853542 
+Epoch: 228, Global Error: 1.9699056153225434 
+Epoch: 229, Global Error: 1.9693811690432002 
+Epoch: 230, Global Error: 1.969665498310031 
+Epoch: 231, Global Error: 1.9690196245255795 
+Epoch: 232, Global Error: 1.9683699675304371 
+Epoch: 233, Global Error: 1.9676023164711898 
+Epoch: 234, Global Error: 1.967087514501464 
+Epoch: 235, Global Error: 1.9674026245376337 
+Epoch: 236, Global Error: 1.9668632376432753 
+Epoch: 237, Global Error: 1.9663534851725268 
+Epoch: 238, Global Error: 1.9658993145535348 
+Epoch: 239, Global Error: 1.9655774823575545 
+Epoch: 240, Global Error: 1.9651895616770096 
+Epoch: 241, Global Error: 1.965084525575636 
+Epoch: 242, Global Error: 1.9642227524752613 
+Epoch: 243, Global Error: 1.9639760912648074 
+Epoch: 244, Global Error: 1.964551465042131 
+Epoch: 245, Global Error: 1.9645011354813142 
+Epoch: 246, Global Error: 1.9631346372375649 
+Epoch: 247, Global Error: 1.9630882477222562 
+Epoch: 248, Global Error: 1.9634741507768025 
+Epoch: 249, Global Error: 1.9628143510243716 
+Epoch: 250, Global Error: 1.9629760822111746 
+Epoch: 251, Global Error: 1.9621024189553642 
+Epoch: 252, Global Error: 1.9617344481465344 
+Epoch: 253, Global Error: 1.9615126883088716 
+Epoch: 254, Global Error: 1.961309907071376 
+Epoch: 255, Global Error: 1.9611174020118218 
+Epoch: 256, Global Error: 1.960571839162059 
+Epoch: 257, Global Error: 1.9605707046541843 
+Epoch: 258, Global Error: 1.9598480628278228 
+Epoch: 259, Global Error: 1.9599383003846262 
+Epoch: 260, Global Error: 1.9599503724558145 
+Epoch: 261, Global Error: 1.9598277014669327 
+Epoch: 262, Global Error: 1.9595648735071038 
+Epoch: 263, Global Error: 1.9591173252134473 
+Epoch: 264, Global Error: 1.9589003520921733 
+Epoch: 265, Global Error: 1.9586809692008766 
+Epoch: 266, Global Error: 1.958766012319056 
+Epoch: 267, Global Error: 1.9582091052441046 
+Epoch: 268, Global Error: 1.9577392036280776 
+Epoch: 269, Global Error: 1.9577535818709704 
+Epoch: 270, Global Error: 1.9570470999220118 
+Epoch: 271, Global Error: 1.9567074327089458 
+Epoch: 272, Global Error: 1.956041716867619 
+Epoch: 273, Global Error: 1.957099919507793 
+Epoch: 274, Global Error: 1.9565391526966773 
+Epoch: 275, Global Error: 1.956042182889274 
+Epoch: 276, Global Error: 1.9558222781181394 
+Epoch: 277, Global Error: 1.9553048450039936 
+Epoch: 278, Global Error: 1.9560332245275187 
+Epoch: 279, Global Error: 1.9552987307173417 
+Epoch: 280, Global Error: 1.9550199901003937 
+Epoch: 281, Global Error: 1.9544254712911338 
+Epoch: 282, Global Error: 1.9545695923172874 
+Epoch: 283, Global Error: 1.9547036830490507 
+Epoch: 284, Global Error: 1.9548706759114387 
+Epoch: 285, Global Error: 1.954575648575973 
+Epoch: 286, Global Error: 1.9542455204951374 
+Epoch: 287, Global Error: 1.954427843690725 
+Epoch: 288, Global Error: 1.9541099817736833 
+Epoch: 289, Global Error: 1.953716225110834 
+Epoch: 290, Global Error: 1.9538300727101603 
+Epoch: 291, Global Error: 1.9528701744431471 
+Epoch: 292, Global Error: 1.9529736109560178 
+Epoch: 293, Global Error: 1.9527479742284028 
+Epoch: 294, Global Error: 1.9525514241474946 
+Epoch: 295, Global Error: 1.9530638853101847 
+Epoch: 296, Global Error: 1.95305002002409 
+Epoch: 297, Global Error: 1.9523987930728561 
+Epoch: 298, Global Error: 1.9516209399413196 
+Epoch: 299, Global Error: 1.9508153260754186 
+Epoch: 300, Global Error: 1.952052795916387 
+Epoch: 301, Global Error: 1.9520814783811837 
+Epoch: 302, Global Error: 1.951804999390706 
+Epoch: 303, Global Error: 1.9509630460479204 
+Epoch: 304, Global Error: 1.9516170230943177 
+Epoch: 305, Global Error: 1.9500559258328263 
+Epoch: 306, Global Error: 1.9499481591300707 
+Epoch: 307, Global Error: 1.9502176755695446 
+Epoch: 308, Global Error: 1.9506107629486769 
+Epoch: 309, Global Error: 1.9497091544707188 
+Epoch: 310, Global Error: 1.9494058316304936 
+Epoch: 311, Global Error: 1.9493665692599491 
+Epoch: 312, Global Error: 1.9509279790358243 
+Epoch: 313, Global Error: 1.9498213509925515 
+Epoch: 314, Global Error: 1.9492101757815334 
+Epoch: 315, Global Error: 1.9506085631674523 
+Epoch: 316, Global Error: 1.9506599113837169 
+Epoch: 317, Global Error: 1.9494888415140301 
+Epoch: 318, Global Error: 1.9481932618469613 
+Epoch: 319, Global Error: 1.9487398189709209 
+Epoch: 320, Global Error: 1.948256578988758 
+Epoch: 321, Global Error: 1.9482859882314905 
+Epoch: 322, Global Error: 1.9486230238037914 
+Epoch: 323, Global Error: 1.9496406558099855 
+Epoch: 324, Global Error: 1.947434571565608 
+Epoch: 325, Global Error: 1.9476131800929093 
+Epoch: 326, Global Error: 1.9480537384689829 
+Epoch: 327, Global Error: 1.9476991638946743 
+Epoch: 328, Global Error: 1.9473049437230325 
+Epoch: 329, Global Error: 1.9475164460974923 
+Epoch: 330, Global Error: 1.9478085019302347 
+Epoch: 331, Global Error: 1.947439600113549 
+Epoch: 332, Global Error: 1.9472022688416601 
+Epoch: 333, Global Error: 1.9469448179148443 
+Epoch: 334, Global Error: 1.9475533612377678 
+Epoch: 335, Global Error: 1.9469338149098319 
+Epoch: 336, Global Error: 1.946859803580743 
+Epoch: 337, Global Error: 1.9468818087359803 
+Epoch: 338, Global Error: 1.946839629249758 
+Epoch: 339, Global Error: 1.9464297541897257 
+Epoch: 340, Global Error: 1.9462409929508273 
+Epoch: 341, Global Error: 1.945717873132054 
+Epoch: 342, Global Error: 1.9459919693875372 
+Epoch: 343, Global Error: 1.9460734708121787 
+Epoch: 344, Global Error: 1.9460321505939793 
+Epoch: 345, Global Error: 1.9453215314068277 
+Epoch: 346, Global Error: 1.9459933285804676 
+Epoch: 347, Global Error: 1.9466543908292573 
+Epoch: 348, Global Error: 1.9459107067923174 
+Epoch: 349, Global Error: 1.944857440743728 
+Epoch: 350, Global Error: 1.9449621000547364 
+Epoch: 351, Global Error: 1.945429246804868 
+Epoch: 352, Global Error: 1.9459238497665492 
+Epoch: 353, Global Error: 1.9453092276218202 
+Epoch: 354, Global Error: 1.9449453438869209 
+Epoch: 355, Global Error: 1.9443046816670078 
+Epoch: 356, Global Error: 1.9446033115701773 
+Epoch: 357, Global Error: 1.9440469524007187 
+Epoch: 358, Global Error: 1.9437264565967995 
+Epoch: 359, Global Error: 1.944225828401569 
+Epoch: 360, Global Error: 1.9433874862325389 
+Epoch: 361, Global Error: 1.943646702186778 
+Epoch: 362, Global Error: 1.9432629038329623 
+Epoch: 363, Global Error: 1.9433053290340647 
+Epoch: 364, Global Error: 1.9434424052725399 
+Epoch: 365, Global Error: 1.9437937616118044 
+Epoch: 366, Global Error: 1.9429650650804546 
+Epoch: 367, Global Error: 1.9427624510593513 
+Epoch: 368, Global Error: 1.943691158529766 
+Epoch: 369, Global Error: 1.9432847367663748 
+Epoch: 370, Global Error: 1.9430269828767028 
+Epoch: 371, Global Error: 1.9434131881129708 
+Epoch: 372, Global Error: 1.9428989033738087 
+Epoch: 373, Global Error: 1.9426640961357065 
+Epoch: 374, Global Error: 1.9427673939437948 
+Epoch: 375, Global Error: 1.9428750872139549 
+Epoch: 376, Global Error: 1.942907831416873 
+Epoch: 377, Global Error: 1.9427074540075284 
+Epoch: 378, Global Error: 1.9425370838341194 
+Epoch: 379, Global Error: 1.942406092783424 
+Epoch: 380, Global Error: 1.94271090975383 
+Epoch: 381, Global Error: 1.9424376025433006 
+Epoch: 382, Global Error: 1.9435142393883003 
+Epoch: 383, Global Error: 1.9419619684598448 
+Epoch: 384, Global Error: 1.94202149824652 
+Epoch: 385, Global Error: 1.9418947945212504 
+Epoch: 386, Global Error: 1.942644862119452 
+Epoch: 387, Global Error: 1.9421298592625118 
+Epoch: 388, Global Error: 1.9416777951782198 
+Epoch: 389, Global Error: 1.9412804160700032 
+Epoch: 390, Global Error: 1.941610244523348 
+Epoch: 391, Global Error: 1.941775534390291 
+Epoch: 392, Global Error: 1.9414738759784091 
+Epoch: 393, Global Error: 1.9409243040292037 
+Epoch: 394, Global Error: 1.9410039381158042 
+Epoch: 395, Global Error: 1.9413247598824932 
+Epoch: 396, Global Error: 1.9409117152519917 
+Epoch: 397, Global Error: 1.9414140742167438 
+Epoch: 398, Global Error: 1.9411854443132408 
+Epoch: 399, Global Error: 1.9418657131576609 
+
+ 	 Printing --> smile 
+``````````````````````````````
+``````````````````````````````
+````````\\`----_-\\```````````
+``````\\^`````````````\`_`````
+`````\/````\`````````````\````
+``````````oo_`````\`\`````\```
+````\/````^```````/o^``````_``
+```````````````````````````o``
+````\`````````````````````/o``
+````^o````````````````````````
+`````/\\````````````\````/````
+```````o\``/\`\\\-``/```\^````
+``````````-\\_``````\\`-``````
+`````````````/`----^/`````````
+``````````````````````````````
+
+ 	 Printing --> smile_real 
+```````````_\\\\\_\```````````
+```````\/-^``````````-````````
+````\-//``````````````^`\`````
+```\^```\_\_``````/\\\````\```
+```^````oooo\`````ooooo````\``
+`\o````/ooooo````/ooooo`````\`
+````````/^^^``````^^^^````````
+``````````````````````````````
+```````_``````````````/```````
+`/\````/`````````````_`````\/`
+```\``````\````````\``````\/``
+```\\``````-\\__\\`^````\`^```
+`````/`\``````````````/-^`````
+```````o-\\```````_\/-^```````
+```````````^^`-``^/```````````
+
+ 	 Printing --> triangle 
+``````````````````````````````
+`````````````/`\``````````````
+````````````/``\``````````````
+```````````````^-`````````````
+```````````/````_`````````````
+``````````````````_```````````
+````````//````````\```````````
+````````\`````````^\_`````````
+```````\\```````````\\````````
+`````````````````````_\```````
+`````\````````````````^```````
+````/``````````````````/\\````
+````/```\\\\____________\o_```
+``````````````````````````````
+``````````````````````````````
