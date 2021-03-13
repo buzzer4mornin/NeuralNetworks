@@ -1,6 +1,6 @@
 # Implementation of Neural Networks Projects
 
-WordRecognition - NN which only recognizes some list of words, disregards any other words. 
+WordRecognition - NN which recognizes only some list of words, disregards any other words. 
 
 Tiles - NN reconstruction of original image tile by tile. Task is to approximate image as much as possible along with maximizing net profit.
 
